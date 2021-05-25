@@ -2,7 +2,6 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    width: 100vw;
     display: grid;
     place-content: center;
     background-color: darkcyan;
@@ -13,6 +12,7 @@ body {
 }
 #app {
     font-size: 2rem;
+    margin: 0;
 }
 #app2 {
     color: skyblue;
@@ -32,7 +32,7 @@ button {
     padding: 8px;
     border-radius: 5px;
     box-shadow: 3px 3px 5px rgba(56, 56, 56, 0.397);
-    color: white;
+    color: rgb(226, 226, 226);
     background-color: deeppink;
     white-space: nowrap;
     transition: background-color 500ms, box-shadow 500ms, transform 500ms;

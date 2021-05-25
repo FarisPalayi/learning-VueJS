@@ -34,10 +34,18 @@ let app4 = new Vue({
       { item: "fire 🔥" },
       { item: "laptop 💻" },
     ],
+
   },
   methods: {
+    randomPicker: function (array) {
+        let randomIndex = Math.floor(Math.random() * array.length);
+        return array[randomIndex];
+    },
     add: function () {
-      this.lists.push({ item: "item 🆕" });
+      let imojiArray = ['🍖','🍭','🚀','🌈','❄','🌟','🎊','🐠','🍕','🍁','🎨','🎁'];
+      let nameArray = ["Food",'fish','confetti','baby','monitor','rainbow','paper','bluesky','pizza','gift','snow','paint','leaf','waterfall'];
+
+      this.lists.push({ item: this.randomPicker(nameArray) + ' ' + this.randomPicker(imojiArray) });
     },
   },
 });
