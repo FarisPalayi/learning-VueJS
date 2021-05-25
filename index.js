@@ -1,29 +1,17 @@
-let app = new Vue({
+let header = new Vue({
   // showing data
-  el: "#app",
+  el: "#header",
   data: {
-    message: "First Vue Page🎉",
+    header1: "First Vue Page🎉",
+    header2: "Hello I'm the item 2️⃣",
+    header3: "You've got fooled. There's nothing in here 😟",
     title: "Hello this is a title", // v-bind
+    show: true
   },
 });
 
-let app2 = new Vue({
-  el: "#app2",
-  data: {
-    message: "Hello I'm the item 2️⃣",
-  },
-});
-
-let app3 = new Vue({
-  el: "#app3",
-  data: {
-    message: "You've got fooled. There's nothing in here 😟",
-    show: true, // showing element based on the condition
-  },
-});
-
-let list = new Vue({
-  el: "#list",
+let main = new Vue({
+  el: "#main",
   data: {
     message: "Here's a list of items 🛒",
     btnMessage: "➕ Add random item",
@@ -36,22 +24,32 @@ let list = new Vue({
     ],
     placeholder: "Type a random name ⌨",
     value: '',
+    emojiArray: ['🍖','🍭','🚀','🌈','❄','🌟','🎊','🐠','🍕','🍁','🎨','🎁'],
+    nameArray : ["Food",'fish','confetti','baby','monitor','rainbow','paper','bluesky','pizza','gift','snow','paint','leaf','waterfall'],
 },
 methods: {
-    randomPicker: function (array) {
+    randomPicker: function (array){
         let randomIndex = Math.floor(Math.random() * array.length);
         return array[randomIndex];
     },
-    add: function () {
-      let emojiArray = ['🍖','🍭','🚀','🌈','❄','🌟','🎊','🐠','🍕','🍁','🎨','🎁'];
-      let nameArray = ["Food",'fish','confetti','baby','monitor','rainbow','paper','bluesky','pizza','gift','snow','paint','leaf','waterfall'];
-
-      this.lists.push({ item: this.randomPicker(nameArray) + ' ' + this.randomPicker(emojiArray) });
+    add: function (){
+      this.lists.push({ item: this.randomPicker(this.nameArray) + ' ' + this.randomPicker(this.emojiArray) });
     },
-    input: function(){
-        let emojiArray = ['🍖','🍭','🚀','🌈','❄','🌟','🎊','🐠','🍕','🍁','🎨','🎁'];
-        this.lists.push({ item: this.value + ' ' + this.randomPicker(emojiArray) });
+    input: function (){
+        this.lists.push({ item: this.value + ' ' + this.randomPicker(this.emojiArray) });
         this.value = '';
     }
   },
 });
+
+Vue.component('hyperlink', {
+  template: '<a href="./components.html" class="hyperlink">Components</a>'
+})
+
+
+let footer = new Vue({
+  el: '#footer',
+  // data: {
+  //   message: 'this is the first to do item in this section'
+  // }
+})

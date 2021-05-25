@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    min-height: calc(100vh - 2em); 
+    height: calc(100vh - 2em); 
     display: grid;
     place-content: center;
     background-color: darkcyan;
@@ -9,25 +9,31 @@ body {
     color: rgb(247, 203, 121);
     font-family: sans-serif;
     font-weight: bold;
-    padding: 1em 0;
+    padding: 1em;
 }
 * {
     user-select: none;
 }
 
-#app {
+.title {
     font-size: 2rem;
     margin: 0;
 }
-#app2 {
+.title2 {
     color: skyblue;
+    font-size: 20px;
+    margin: 0;
 }
-#app3 {
+
+.title3 {
     color: rgb(211, 173, 241);
+    font-size: 20px;
+    margin: 0;
 }
+
 ul {
     color: white;
-    max-height: 300px;
+    max-height: max(38vh,135px);
     overflow-y: auto;
 }
 ul li {
@@ -66,4 +72,51 @@ input[type=text] {
     text-align: center;
     font-size: .9rem;
     outline: none;
+    transition: transform 300ms;
+}
+input[type=text]:hover,
+input[type=text]:focus {
+    transform: scale(1.01);
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+}
+
+.next-up {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hyperlink {
+    text-decoration: none;
+    display: inline-block;
+    min-width: fit-content;
+    width: 150px;
+    height: 35px;
+    background-color: rgb(0, 137, 250);
+    border-radius: 13px;
+    color: rgb(233, 233, 233);
+    font-size: .8rem;
+    text-align: center;
+    line-height: 35px;
+    font-weight: normal;
+    box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.226);
+    position: absolute;
+    bottom: 30px;
+}
+.hyperlink::after {
+    content: '>';
+    position: absolute;
+    margin-left: 5px;
+    font-size: .7rem;
+    transform: translate(0px,3%);
+    transition: transform 300ms ease-out;
+    opacity: 0;
+}
+.hyperlink:hover::after {
+    opacity: 1;
+    transform: translate(10px,3%);
 }
