@@ -20,3 +20,9 @@ body {
 #app3 {
     color: rgb(211, 173, 241);
 }
+ul {
+    color: white;
+}
+ul li {
+    font-weight: normal;
+}
