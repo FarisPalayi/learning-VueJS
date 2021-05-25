@@ -22,11 +22,11 @@ let app3 = new Vue({
   },
 });
 
-let app4 = new Vue({
-  el: "#app4",
+let list = new Vue({
+  el: "#list",
   data: {
     message: "Here's a list of items 🛒",
-    btnMessage: "➕ Add item",
+    btnMessage: "➕ Add random item",
     lists: [
       { item: "football ⚽" },
       { item: "cake 🍰" },
@@ -34,19 +34,24 @@ let app4 = new Vue({
       { item: "fire 🔥" },
       { item: "laptop 💻" },
     ],
-
-  },
-  methods: {
+    placeholder: "Type a random name ⌨",
+    value: '',
+},
+methods: {
     randomPicker: function (array) {
         let randomIndex = Math.floor(Math.random() * array.length);
         return array[randomIndex];
     },
     add: function () {
-      let imojiArray = ['🍖','🍭','🚀','🌈','❄','🌟','🎊','🐠','🍕','🍁','🎨','🎁'];
+      let emojiArray = ['🍖','🍭','🚀','🌈','❄','🌟','🎊','🐠','🍕','🍁','🎨','🎁'];
       let nameArray = ["Food",'fish','confetti','baby','monitor','rainbow','paper','bluesky','pizza','gift','snow','paint','leaf','waterfall'];
 
-      this.lists.push({ item: this.randomPicker(nameArray) + ' ' + this.randomPicker(imojiArray) });
+      this.lists.push({ item: this.randomPicker(nameArray) + ' ' + this.randomPicker(emojiArray) });
     },
+    input: function(){
+        let emojiArray = ['🍖','🍭','🚀','🌈','❄','🌟','🎊','🐠','🍕','🍁','🎨','🎁'];
+        this.lists.push({ item: this.value + ' ' + this.randomPicker(emojiArray) });
+        this.value = '';
+    }
   },
 });
-let addBtn = new Vue({});
