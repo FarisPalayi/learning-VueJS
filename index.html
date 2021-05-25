@@ -13,50 +13,13 @@
     <div id="app2">{{message}}</div>
     <div id="app3" v-if="show">{{ message }}</div>
     <div id="app4">
-        <h4> {{ message }} </h4>
-        <ul>
-            <li v-for="list in lists"> {{ list.item }} </li>
-        </ul>
+      <h4>{{ message }}</h4>
+      <ul>
+        <li v-for="list in lists">{{ list.item }}</li>
+      </ul>
     </div>
+    <button id="addBtn" v-on:click="add">{{ message }}</button>
 
-    <script>
-      let app = new Vue({
-        // showing data
-        el: "#app",
-        data: {
-          message: "First View Page🎉",
-          title: "Hello this is a title", // v-bind
-        },
-      });
-
-      let app2 = new Vue({
-        el: "#app2",
-        data: {
-          message: "Hello I'm the item 2️⃣",
-        },
-      });
-
-      let app3 = new Vue({
-        el: "#app3",
-        data: {
-          message: "You've got fooled. There's nothing in here 😟",
-          show: true, // showing element based on the condition
-        },
-      });
-
-      let app4 = new Vue({
-        el: "#app4",
-        data: {
-          message: "Here's a list of items 🛒",
-          lists: [
-              { item: "football ⚽" },
-              { item: "cake 🍰" },
-              { item: "ice cream 🍦"},
-              { item: "fire 🔥" },
-              { item: "laptop 💻" }
-          ]
-        },
-      });
-    </script>
+    <script src="./index.js"></script>
   </body>
 </html>
