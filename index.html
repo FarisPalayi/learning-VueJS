@@ -17,8 +17,9 @@
       <ul>
         <li v-for="list in lists">{{ list.item }}</li>
       </ul>
+      <button v-on:click="add">{{ btnMessage }}</button>
     </div>
-    <button id="addBtn" v-on:click="add">{{ message }}</button>
+    
 
     <script src="./index.js"></script>
   </body>

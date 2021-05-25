@@ -37,6 +37,7 @@ button {
     white-space: nowrap;
     transition: background-color 500ms, box-shadow 500ms, transform 500ms;
     border: none;
+    user-select: none;
 }
 button:hover {
     background-color: rgb(255, 0, 0);
