@@ -43,13 +43,10 @@ methods: {
 });
 
 Vue.component('hyperlink', {
-  template: '<a href="./components.html" class="hyperlink">Components</a>'
+  template: '<a href="./Components/components.html" class="hyperlink">Components</a>'
 })
 
 
 let footer = new Vue({
   el: '#footer',
-  // data: {
-  //   message: 'this is the first to do item in this section'
-  // }
 })
