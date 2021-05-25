@@ -9,18 +9,35 @@
     <script src="./vue.js"></script>
   </head>
   <body>
-    <div id="app" v-bind:title="title">
+    <div id="app" v-bind:title="title"> 
       {{ message }}
     </div>
+    <div id="app2">
+        {{app2message}}
+    </div>
+    <div id='app3' v-if='show'> {{ message }}</div>
 
     <script>
-      var app = new Vue({
+      let app = new Vue({ // showing data
         el: "#app",
         data: {
           message: "First View Page🎉",
-          title: "Hello this is a title",
+          title: "Hello this is a title", // v-bind
         },
       });
+      let app2 = new Vue({
+          el: '#app2',
+          data: {
+              app2message: "Hello I'm the item 2️⃣"
+          }
+      })
+      let app3 = new Vue({
+          el: '#app3',
+          data: {
+              message: "You've got fooled. There's nothing in here 😟",
+              show: true // showing element based on the condition
+          }
+      })
     </script>
   </body>
 </html>
