@@ -1,3 +1,5 @@
+* {user-select: none}
+
 body {
     margin: 0;
     padding: 1em;
@@ -28,7 +30,7 @@ body {
     position: relative;
 }
 .card:hover {
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.308);
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
     transform: scale(1.01);
 }
 .card::before,
@@ -39,7 +41,7 @@ body {
     left: 20px;
     font-size: 1.7rem;
     text-shadow: none;
-    animation: content 2000ms backwards;
+    animation: card 1000ms backwards;
     animation-delay: calc(14 * var(--delay));
 }
 .card::after {
@@ -48,6 +50,8 @@ body {
     bottom: 20px;
     right: 20px;
     transform: rotate(180deg);
+    animation: content 1000ms backwards;
+    animation-delay: calc(14 * var(--delay));
 }
 
 @keyframes card {
@@ -62,9 +66,18 @@ body {
         transform: scale(1);
     }
 }
+
 @keyframes content {
-    from { opacity: 0 }
-    to   { opacity: 1 }
+    from {
+        opacity: 0;
+        filter: hue-rotate(0deg);
+        transform: scale(0.3) rotate(180deg);
+    }
+    to {
+        opacity: 1;
+        filter: hue-rotate(360deg);
+        transform: scale(1) rotate(180deg);
+    }
 }
 
 .card:nth-child(1) { animation-delay: calc(1 * var(--delay)) }
@@ -75,3 +88,18 @@ body {
 .card:nth-child(6) { animation-delay: calc(6 * var(--delay)) }
 .card:nth-child(7) { animation-delay: calc(7 * var(--delay)) }
 .card:nth-child(8) { animation-delay: calc(8 * var(--delay)) }
+
+.hyperlink::after{display: none}
+.hyperlink::before {
+    content: '<';
+    position: absolute;
+    margin-right: 20px;
+    font-size: .7rem;
+    transform: translate(0px,3%);
+    transition: transform 300ms ease-out;
+    opacity: 0;
+}
+.hyperlink:hover::before {
+    opacity: 1;
+    transform: translate(-20px,3%);
+}

@@ -4,7 +4,7 @@ let header = new Vue({
   data: {
     header1: "First Vue Page🎉",
     header2: "Hello I'm the item 2️⃣",
-    header3: "You've got fooled. There's nothing in here 😟",
+    header3: "Just some placeholder text 😃",
     title: "Hello this is a title", // v-bind
     show: true
   },
@@ -45,8 +45,6 @@ methods: {
 Vue.component('hyperlink', {
   template: '<a href="./Components/components.html" class="hyperlink">Components</a>'
 })
-
-
 let footer = new Vue({
   el: '#footer',
 })

@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Components</title>
     <link rel="stylesheet" href="./components.css" />
-    <script src="../vue.js"></script>
+    <link rel="stylesheet" href="../hyperlink.css" />
+    <script src="../vue.min.js"></script>
   </head>
   <body>
     <div id="app">
@@ -17,7 +18,10 @@
         v-bind:data-value="textObj.text"
       ></card>
     </div>
+    <footer id="footer">
+        <hyperlink></hyperlink>
+    </footer>
 
-    <script src="./components.js"></script>
+    <script src="./components.vue"></script>
   </body>
 </html>
