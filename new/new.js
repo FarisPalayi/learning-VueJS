@@ -2,7 +2,8 @@
 new Vue({
     el: '#app',
     data: {
-        darkClass: 'light',
-        lightClass: 'dark'
+        isDark: true,
+        darkClass: 'dark',
+        lightClass: 'light'
     },
 })
