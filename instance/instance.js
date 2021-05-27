@@ -8,8 +8,6 @@ let vm = new Vue({
     }
 })
 
-console.log(vm.$data == data);
-
 vm.newData = "this is the new overrided blah text";
 vm.newNewData = 'hello my dear friends!';
 
