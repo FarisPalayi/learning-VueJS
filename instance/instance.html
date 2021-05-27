@@ -12,7 +12,9 @@
     <script src="./instance.js" defer></script>
   </head>
   <body>
-    <div id="app" v-html='newData' v-on:click="newData = buttonHtml">
+    <div id="app">
+      <button v-on:click="likes++" class="like"> 👍 </button>
+      <span class="likeCount"> {{ likes }}</span>
     </div>
   </body>
 </html>
