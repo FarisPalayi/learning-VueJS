@@ -25,8 +25,7 @@
   </head>
   <body>
     <div id="app">
-        <p v-bind:class="[isDark ? darkClass : lightClass, dangerBtn]"> some text </p>
-        <button @click="classObj">toggle theme</button>
+        <button :style='{ backgroundColor: bgcolor, "font-size": size }'>toggle theme</button>
     </div>
   </body>
 </html>
