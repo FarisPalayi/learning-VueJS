@@ -7,15 +7,15 @@
     <title>instance</title>
     <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="../global.css" />
-    <link rel="stylesheet" href="./instance.css" />
+    <link rel="stylesheet" href="./like.css" />
     <script src="../Vue/vue.js"></script>
-    <script src="./instance.js" defer></script>
+    <script src="./like.js" defer></script>
   </head>
   <body>
     <div id="app">
-      <button v-on:click="likes++; giveColor()" class="like"> 👍 </button>
-      <span class="likeCount" v-bind:style="color"> {{ likes }}</span>
+      <button v-on:click="likes++" class="like"> 👍 </button>
       <button v-on:click="likes--" class="dislike" v-bind:disabled="likes < 1"> 👎 </button>
+      <span class="likeCount"> {{ likes }}</span>
     </div>
   </body>
 </html>
