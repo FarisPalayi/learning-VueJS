@@ -2,12 +2,15 @@
 new Vue({
     el: '#app',
     data: {
-        classObj :{ dark: false, light: true },
+        isDark: false,
+        isLight: true,
     },
-    methods: {
-        toggleTheme: function(){
-            this.classObj.dark ? this.classObj.dark = false: this.classObj.dark = true;
-            this.classObj.light ? this.classObj.light = false: this.classObj.light = true;
+    computed: {
+        classObj: function(){
+            return {
+                dark: this.isDark && !this.isLight,
+                light: this.isLight && !this.isDark
+            }
         }
     }
 })
