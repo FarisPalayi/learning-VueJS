@@ -2,8 +2,9 @@ let vm = new Vue({
   el: "#app",
   data: {
     submit: "Submit",
-    style: null,
-    message: "How are things going?",
+    firstName: "Peter",
+    lastName: "Parker",
+    fullName: "Peter Parker"
   },
   methods: {
     submitData: function () {
@@ -12,8 +13,13 @@ let vm = new Vue({
     },
   },
   computed: {
-    reversedMessage: function () {
-      return this.message.split("").reverse().join("");
+    get: function(){
+        return this.firstName + " " + this.lastName;
     },
+    set: function(value){
+        let names = value.split(' ');
+        let firstName = names[0];
+        let lastName = names[names.length - 1];
+    }
   },
 });

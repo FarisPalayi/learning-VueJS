@@ -16,12 +16,11 @@
   <body>
     <main id="app">
       <form>
-        <button type="submit" @click.prevent="submitData" :style="style">
+        <button type="submit" @click.prevent="submitData">
           {{ submit }}
         </button>
       </form>
-      <p>Message: {{ message }}</p>
-      <p>Reversed message: {{ reversedMessage }}</p>
+      <p>Full name : {{ fullName }}</p>
     </main>
   </body>
 </html>
