@@ -13,8 +13,9 @@
   </head>
   <body>
     <div id="app">
-      <button v-on:click="likes++" class="like"> 👍 </button>
-      <span class="likeCount"> {{ likes }}</span>
+      <button v-on:click="likes++; giveColor()" class="like"> 👍 </button>
+      <span class="likeCount" v-bind:style="color"> {{ likes }}</span>
+      <button v-on:click="likes--" class="dislike" v-bind:disabled="likes < 1"> 👎 </button>
     </div>
   </body>
 </html>

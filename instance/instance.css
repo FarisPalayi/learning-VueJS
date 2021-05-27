@@ -1,15 +1,34 @@
-.like {
+.like,
+.dislike {
   width: 60px;
-  height: 50px;
+  height: fit-content;
   padding: 0;
   font-size: 2em;
   background-color: transparent;
   box-shadow: none;
+  transition: filter 800ms;
 }
-.like:hover,.like:active{
-    background-color: transparent;
+.like:hover,
+.like:active,
+.dislike:hover,
+.dislike:active {
+  background-color: transparent;
 }
+.dislike:disabled:hover{
+    transform: none;
+}
+
+.like:active {
+    transform: translateY(2px);
+    filter: hue-rotate(68deg);
+}
+.dislike:active {
+    filter: hue-rotate(308deg) saturate(4.5);
+}
+
 .likeCount {
-    height: 24px;
-    padding: 8px;
+  height: 24px;
+  width: 70px;
+  padding: 8px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
