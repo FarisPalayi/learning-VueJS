@@ -88,18 +88,3 @@ body {
 .card:nth-child(6) { animation-delay: calc(6 * var(--delay)) }
 .card:nth-child(7) { animation-delay: calc(7 * var(--delay)) }
 .card:nth-child(8) { animation-delay: calc(8 * var(--delay)) }
-
-.hyperlink::after{display: none}
-.hyperlink::before {
-    content: '<';
-    position: absolute;
-    margin-right: 20px;
-    font-size: .7rem;
-    transform: translate(0px,3%);
-    transition: transform 300ms ease-out;
-    opacity: 0;
-}
-.hyperlink:hover::before {
-    opacity: 1;
-    transform: translate(-20px,3%);
-}
