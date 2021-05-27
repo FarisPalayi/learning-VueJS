@@ -25,7 +25,10 @@
   </head>
   <body>
     <div id="app">
-        <h1 v-if="darkTitle" class="dark"> this is the dark heading</h1>
+        <template v-if="darkTitle">
+            <h1> this is the dark heading</h1>
+            <h3>this is another heading</h3>
+        </template>
         <h1 v-else> This is the default heading</h1>
     </div>
   </body>
