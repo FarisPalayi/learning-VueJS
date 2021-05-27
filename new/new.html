@@ -12,17 +12,21 @@
     <link rel="stylesheet" href="./new.css" />
     <script src="../Vue/vue.js"></script>
     <script src="./new.js" defer></script>
+    <style>
+        .dark{
+            background-color: darkslategray;
+            color: white;
+        }
+        .light{
+            background-color: white;
+            color: #000;
+        }
+    </style>
   </head>
   <body>
-    <div id="watch-example">
-      <p>
-        Ask a yes/no question:
-        <input v-model="question" />
-      </p>
-      <p>{{ answer }}</p>
+    <div id="app">
+        <p v-bind:class="{ dark: isDark, light: isLight }"> some text </p>
+        <button @click="toggleTheme">toggle theme</button>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
   </body>
 </html>
