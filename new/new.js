@@ -1,13 +1,13 @@
+
 new Vue({
     el: '#app',
     data: {
-        isDark: true,
-        isLight: false,
+        classObj :{ dark: false, light: true },
     },
     methods: {
         toggleTheme: function(){
-            this.isDark ? this.isDark = false: this.isDark = true;
-            this.isLight ? this.isLight = false: this.isLight = true;
+            this.classObj.dark ? this.classObj.dark = false: this.classObj.dark = true;
+            this.classObj.light ? this.classObj.light = false: this.classObj.light = true;
         }
     }
 })
