@@ -12,9 +12,7 @@
     <script src="./instance.js" defer></script>
   </head>
   <body>
-    <div id="app" v-once>
-      {{ newNewData }}
-      <button v-on:click="newNewData = 'this is stupid'">Click Here</button>
+    <div id="app" v-html='newData' v-on:click="newData = buttonHtml">
     </div>
   </body>
 </html>
