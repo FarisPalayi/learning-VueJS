@@ -4,18 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>instance</title>
+    <meta name="theme-color" content="darkcyan" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="darkcyan" />
+    <title>Like</title>
     <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="../global.css" />
     <link rel="stylesheet" href="./like.css" />
     <script src="../Vue/vue.js"></script>
-    <script src="./like.js" defer></script>
   </head>
+
   <body>
     <div id="app">
       <button v-on:click="likes++" class="like"> 👍 </button>
       <button v-on:click="likes--" class="dislike" v-bind:disabled="likes < 1"> 👎 </button>
       <span class="likeCount"> {{ likes }}</span>
     </div>
+    <script>new Vue({ el: "#app", data: { likes: 0 } });</script>
   </body>
+  
 </html>

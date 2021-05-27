@@ -10,20 +10,12 @@
   filter: drop-shadow(2px 2px 0px hsl(43, 100%, 62%,.5));
   margin-right: 30px;
 }
-.like:hover,
-.like:active,
-.dislike:hover,
-.dislike:active {
-  background-color: transparent;
-}
+
+.like:hover, .like:active, .dislike:hover, .dislike:active { background-color: transparent }
+.like:active { transform: translateY(2px); filter: hue-rotate(68deg) }
+.like:active ~ .likeCount{ color: #1cff00}
 .dislike:disabled{ filter: saturate(0) }
 .dislike:disabled:hover { transform: none }
-
-.like:active {
-    transform: translateY(2px);
-    filter: hue-rotate(68deg);
-}
-.like:active ~ .likeCount{ color: #1cff00}
 .dislike:active { filter: hue-rotate(308deg) saturate(4)}
 .dislike:active ~ .likeCount{ color: rgb(209, 28, 28) }
 

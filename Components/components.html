@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="darkcyan" />
     <meta name="apple-mobile-web-app-status-bar-style" content="darkcyan" />
@@ -10,7 +9,9 @@
     <link rel="stylesheet" href="./components.css" />
     <link rel="stylesheet" href="../global.css" />
     <script src="../Vue/vue.js"></script>
+    <script src="./components.js" defer></script>
   </head>
+
   <body>
     <div id="app">
       <card
@@ -20,10 +21,7 @@
         v-bind:data-value="textObj.text"
       ></card>
     </div>
-    <footer id="footer">
-        <hyperlink></hyperlink>
-    </footer>
-
-    <script src="./components.js"></script>
+    <footer id="footer"><hyperlink></hyperlink></footer>
   </body>
+
 </html>

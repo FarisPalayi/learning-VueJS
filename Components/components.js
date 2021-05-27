@@ -20,7 +20,7 @@ Vue.component("card", {
   });
 
   Vue.component('hyperlink', {
-    template: '<a href="../instance/instance.html" class="hyperlink">Instance</a>'
+    template: '<a href="../like/like.html" class="hyperlink">like</a>'
   })
   let footer = new Vue({
     el: '#footer',
