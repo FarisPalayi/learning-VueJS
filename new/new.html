@@ -16,7 +16,7 @@
   <body>
     <main id="app">
       <form>
-        <button type="submit" v-on:click.prevent="submitData"><!-- prevent default -> modifier-->
+        <button type="submit" @click.prevent="submitData" :style="style">
           {{ submit }}
         </button>
       </form>

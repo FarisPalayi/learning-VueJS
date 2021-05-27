@@ -1,11 +1,13 @@
 new Vue({
   el: "#app",
   data: {
-    submit: "submit",
+    submit: "Submit",
+    style: null
   },
   methods: {
     submitData: function () {
-      this.submit = "sumitted";
+      this.submit = "Sumitted";
+      this.style = 'background-color: lime';
     },
   },
 });
