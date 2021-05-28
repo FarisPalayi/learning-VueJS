@@ -12,21 +12,32 @@
     <link rel="stylesheet" href="./new.css" />
     <script src="../Vue/vue.js"></script>
     <script src="./new.js" defer></script>
-    <style>
-        .dark{
-            background-color: darkslategray;
-            color: white;
-        }
-        .light{
-            background-color: white;
-            color: #000;
-        }
-    </style>
   </head>
   <body>
     <div id="app">
-            <h1 v-show="darkTitle"> this is the dark heading</h1>
-            <h3>this is another heading</h3>
+      <input
+        type="text"
+        v-model="newTodoText"
+        @change="addItem"
+        :placeholder="placeholder"
+      />
+      <button 
+       class="add-btn"
+       @click="addItem"
+       >
+       Add
+    </button>
+      <ol>
+        <li v-for="(item, i) in items">
+          <input type="checkbox" id="checkbox">
+          <label for="checkbox"><span>{{ item.text }}</span></label>
+          <button 
+            @click="items.splice(i, 1)" 
+            class="remove-btn">
+            remove
+        </button>
+        </li>
+      </ol>
     </div>
   </body>
 </html>
