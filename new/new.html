@@ -16,12 +16,7 @@
   <body>
     <div id="app">
       <div :style="{ fontSize: postFontSize + 'em' }">
-        <blog-post
-          v-for="post in posts"
-          v-bind:key="post.id"
-          v-bind:post="post"
-          v-on:enlarge-text="postFontSize += 0.1"
-        ></blog-post>
+        <blog-post>something bad has happened!</blog-post>
       </div>
     </div>
   </body>

@@ -2,14 +2,12 @@ Vue.component('blog-post', {
   props: ['post'],
   template: `
     <div class="blog-post">
-      <h3>{{ post.title }}</h3>
-      <button v-on:click="$emit('enlarge-text')">
-        Enlarge text
-      </button>
-      <div v-html="post.content"></div>
+      <strong>Error!</strong>
+      <slot></slot>
     </div>
   `
 })
+
 new Vue({
   el: '#app',
   data: {
