@@ -15,9 +15,14 @@
   </head>
   <body>
     <div id="app">
-      <button-counter></button-counter>
-      <button-counter></button-counter>
-      <button-counter></button-counter>
+      <div :style="{ fontSize: postFontSize + 'em' }">
+        <blog-post
+          v-for="post in posts"
+          v-bind:key="post.id"
+          v-bind:post="post"
+          v-on:enlarge-text="postFontSize += 0.1"
+        ></blog-post>
+      </div>
     </div>
   </body>
 </html>
