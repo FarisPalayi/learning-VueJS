@@ -27,3 +27,5 @@
   position: absolute;
   transform: translate(-125px, 13px);
 }
+
+.hyperlink { position: absolute; bottom: 30px }

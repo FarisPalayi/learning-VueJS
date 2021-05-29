@@ -15,11 +15,19 @@
 
   <body>
     <div id="app">
-      <button v-on:click="likes++" class="like"> 👍 </button>
-      <button v-on:click="likes--" class="dislike" v-bind:disabled="likes < 1"> 👎 </button>
+      <button v-on:click="likes++" class="like">👍</button>
+      <button v-on:click="likes--" class="dislike" v-bind:disabled="likes < 1">
+        👎
+      </button>
       <span class="likeCount"> {{ likes }}</span>
     </div>
-    <script>new Vue({ el: "#app", data: { likes: 0 } });</script>
+    <footer id="footer"><hyperlink></hyperlink></footer>
+    <script>
+      new Vue({ el: "#app", data: { likes: 0 } });
+      Vue.component("hyperlink", {
+        template: '<a href="../todo/todo.html" class="hyperlink">todo</a>',
+      });
+      let footer = new Vue({ el: "#footer" });
+    </script>
   </body>
-  
 </html>
