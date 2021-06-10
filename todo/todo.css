@@ -1,12 +1,35 @@
-li{
+#app {
+    /* min-height: 100vh; */
+}
+
+.title {
+    color: cyan;
+    text-shadow: 0px 0px 0px cyan,
+                 -1px -3px 0px tomato,
+                 -1px -4px 0px yellow;
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 3rem;
+    transition: text-shadow 300ms;
+}
+
+.title:hover {
+    text-shadow: 0px 2px 2px cyan,
+                 -1px -3px 0px tomato,
+                 -1px -4px 0px yellow;
+}
+
+li {
     padding: 5px;
     margin: 5px;
     font-size: 1.2rem;
     list-style-type: none;
 }
-li::marker{
+
+li::marker {
     color: coral;
 }
+
 .remove-btn {
     width: 90px;
     border-radius: 20px;
@@ -27,4 +50,8 @@ input[type=checkbox] {
 }
 input[type=checkbox]:checked ~ label{
     text-decoration: line-through;
+}
+
+.hyperlink::after {
+    content: none;
 }

@@ -1,5 +1,4 @@
 let header = new Vue({
-  // showing data
   el: "#header",
   data: {
     header1: "First Vue Page🎉",
