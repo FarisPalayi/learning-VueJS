@@ -10,22 +10,28 @@ let vm = new Vue({
     nextTodoId: 4,
     newTodoText: "",
     currentFocus: 0,
-    tabindex: 0
+    tabindex: 0,
   },
+
   methods: {
-    addItem: function () {
+    addItem() {
       if (this.newTodoText === "") return;
-      this.items.push({ id: this.nextTodoId++, text: this.newTodoText });
+      this.items.push({ id: this.nextTodoId++, text: this.newTodoText, isChecked: false });
       this.newTodoText = "";
+      this.addToLocalStorage();
     },
-    tic: function(e) {
-      e.target.checked = !e.target.checked;
+    tic(e) {
+      let isChecked = e.target.checked;
+      isChecked = !isChecked;
+      this.isChecked = isChecked;
+      this.addToLocalStorage();
+      console.log(this.items)
     },
-    navigate: function(e) {
+    navigate(e) {
       e.target.focus();
     },
-    setFocus: function (e) {
-      let totalNumberOfLists = this.items.length;
+    setFocus(e) {
+      const totalNumberOfLists = this.items.length;
 
       if (e.key === 'ArrowDown') {
         this.currentFocus++
@@ -35,20 +41,29 @@ let vm = new Vue({
         this.currentFocus--
         if (this.currentFocus < 1) this.currentFocus = totalNumberOfLists
       }
-
-      console.log(this.currentFocus);
-      
-      // if(this.currentFocus === this.items.id) {
-      //   console.log(true);
-      //   return focus()
-      // }
-    }
+    },
+    addToLocalStorage() {
+      localStorage.setItem('todoList', JSON.stringify(this.items));
+    },
   },
+  mounted() {
+    const todoListFromLocalStorage = localStorage.getItem('todoList');
+    if (todoListFromLocalStorage) {
+      try {
+        this.items = JSON.parse(todoListFromLocalStorage)
+      } catch (error) {
+        console.error('Error parsing localStorage data')
+        localStorage.clear();
+        console.warn('%clocalStorage data is automatically cleared', 'color: lime; font-weight: bold');
+      }
+    }
+  }
 });
 
 Vue.component('hyperlink', {
   template: '<a href="../index.html" class="hyperlink">home 🏠</a>'
 })
+
 let footer = new Vue({
   el: '#footer',
 })

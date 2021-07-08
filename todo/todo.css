@@ -52,6 +52,7 @@ li::marker {
     height: 30px;
     padding: 0;
 }
+
 .add-btn {
     width: 120px;
 }
@@ -73,7 +74,7 @@ input[type=checkbox] {
     opacity: 0;
 }
 
-input[type=checkbox]:checked + label{
+input[type=checkbox]:checked + label > span{
     text-decoration: line-through;
 }
 
