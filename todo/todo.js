@@ -15,17 +15,19 @@ let vm = new Vue({
 
   methods: {
     addItem() {
-      if (this.newTodoText === "") return;
+      if (this.newTodoText.trim() === "") return;
       this.items.push({ id: this.nextTodoId++, text: this.newTodoText, isChecked: false });
       this.newTodoText = "";
       this.addToLocalStorage();
     },
     tic(e) {
-      let isChecked = e.target.checked;
-      isChecked = !isChecked;
-      this.isChecked = isChecked;
+      const id = e.target.getAttribute('id');
+      let currentItem = this.items[id]
+      
+      e.target.checked = !(currentItem.isChecked); // toggle check when press enter
+      currentItem.isChecked = e.target.checked; // update state
+
       this.addToLocalStorage();
-      console.log(this.items)
     },
     navigate(e) {
       e.target.focus();
@@ -51,6 +53,7 @@ let vm = new Vue({
     if (todoListFromLocalStorage) {
       try {
         this.items = JSON.parse(todoListFromLocalStorage)
+
       } catch (error) {
         console.error('Error parsing localStorage data')
         localStorage.clear();
