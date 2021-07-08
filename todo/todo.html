@@ -44,10 +44,16 @@
           :tabindex="tabindex" 
           :class='{"active-item": currentFocus === i+1}'
         >
-          <input type="checkbox" :id="[i]" @keydown.enter="tic" @change='tic' :checked='item.isChecked'>
+          <input
+            type="checkbox"
+            @keydown.enter="tic"
+            @change='tic'
+            :id="[i]"
+            :checked='item.isChecked'
+          >
           <label :for="[i]"><span>{{ item.text }}</span></label>
           <button 
-            @click="items.splice(i, 1)" 
+            @click='deleteTodo'
             class="remove-btn"
           >
             remove

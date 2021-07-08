@@ -47,6 +47,12 @@ let vm = new Vue({
     addToLocalStorage() {
       localStorage.setItem('todoList', JSON.stringify(this.items));
     },
+    deleteTodo(e) {
+      const checkbox = e.target.parentElement.firstElementChild
+      const id = checkbox.getAttribute('id');
+      this.items.splice(id, 1);
+      this.addToLocalStorage();
+    }
   },
   mounted() {
     const todoListFromLocalStorage = localStorage.getItem('todoList');
