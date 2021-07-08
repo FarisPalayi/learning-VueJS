@@ -73,17 +73,26 @@ let vm = new Vue({
     const todoListFromLocalStorage = localStorage.getItem('todoList');
     if (todoListFromLocalStorage) {
       try {
-        this.items = JSON.parse(todoListFromLocalStorage)
-
+        const parsedData = JSON.parse(todoListFromLocalStorage);
+        this.items = parsedData;
+        if (typeof parsedData !== 'object') throw new Error('invalid type');
+        if (parsedData.length < 1) throw new Error('empty');
+        for (i in parsedData) {
+          if (!parsedData[i].includes('id')) throw new Error('not valid');
+          if (!parsedData[i].includes('text')) throw new Error('not valid');
+          if (!parsedData[i].includes('isChecked')) throw new Error('not valid');
+        }
       } catch (error) {
         console.error('Error parsing localStorage data')
         localStorage.clear();
-        console.warn('%clocalStorage data is automatically cleared', 'color: lime; font-weight: bold');
+        console.warn('%clocalStorage data has been automatically cleared', 'color: lime; font-weight: bold');
+        console.error(error);
       }
       const ol = this.$refs.ol;
-      ol.firstElementChild.setAttribute('tabindex', '0')
-      ol.firstElementChild.firstElementChild.setAttribute('tabindex', '0') // checkbox
-      ol.firstElementChild.lastElementChild.setAttribute('tabindex', '0') // button
+      const li = ol.firstElementChild;
+      li.setAttribute('tabindex', '0') // li
+      li.firstElementChild.setAttribute('tabindex', '0') // checkbox
+      li.lastElementChild.setAttribute('tabindex', '0') // button
     }
   }
 });
