@@ -78,9 +78,9 @@ let vm = new Vue({
         if (typeof parsedData !== 'object') throw new Error('invalid type');
         if (parsedData.length < 1) throw new Error('empty');
         for (i in parsedData) {
-          if (!parsedData[i].includes('id')) throw new Error('not valid');
-          if (!parsedData[i].includes('text')) throw new Error('not valid');
-          if (!parsedData[i].includes('isChecked')) throw new Error('not valid');
+          if (!(parsedData[i].hasOwnProperty('id'))) throw new Error('not valid');
+          if (!(parsedData[i].hasOwnProperty('text'))) throw new Error('not valid');
+          if (!(parsedData[i].hasOwnProperty('isChecked'))) throw new Error('not valid');
         }
       } catch (error) {
         console.error('Error parsing localStorage data')
