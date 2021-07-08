@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="./todo.css" />
     <script src="../Vue/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
-    <script src="./todo.vue" defer></script>
+    <script src="./todo.js" defer></script>
+    <script src="https://unpkg.com/vuex@3.6.2/dist/vuex.js"></script>
   </head>
   <body>
     <div id="app">
@@ -25,7 +26,7 @@
       <input
         type="text"
         v-model="newTodoText"
-        @change="addItem"
+        @keydown.enter="addItem"
         :placeholder="placeholder"
       />
       <button 
@@ -38,7 +39,7 @@
 
       <ol>
         <li v-for="(item, i) in items">
-          <input type="checkbox" :id="[i]">
+          <input type="checkbox" :id="[i]" @keydown.enter="tic">
           <label :for="[i]"><span>{{ item.text }}</span></label>
           <button 
             @click="items.splice(i, 1)" 

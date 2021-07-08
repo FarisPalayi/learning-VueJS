@@ -16,6 +16,9 @@ let vm = new Vue({
       this.items.push({ id: this.nextTodoId++, text: this.newTodoText });
       this.newTodoText = "";
     },
+    tic: function(e) {
+      e.target.checked = !e.target.checked;
+    }
   },
 });
 
