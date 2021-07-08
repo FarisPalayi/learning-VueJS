@@ -12,7 +12,6 @@ let vm = new Vue({
     currentFocus: 0,
     tabindex: 0,
   },
-
   methods: {
     addItem() {
       if (this.newTodoText.trim() === "") return;
@@ -26,23 +25,39 @@ let vm = new Vue({
       
       e.target.checked = !(currentItem.isChecked); // toggle check when press enter
       currentItem.isChecked = e.target.checked; // update state
-
+      
       this.addToLocalStorage();
     },
     navigate(e) {
       e.target.focus();
     },
-    setFocus(e) {
+    up(e) {
       const totalNumberOfLists = this.items.length;
-
-      if (e.key === 'ArrowDown') {
-        this.currentFocus++
-        if (this.currentFocus > totalNumberOfLists) this.currentFocus = 1
-      }
       if (e.key === 'ArrowUp') {
         this.currentFocus--
         if (this.currentFocus < 1) this.currentFocus = totalNumberOfLists
       }
+      this.setFocus(e)
+    },
+    down(e) {
+      const totalNumberOfLists = this.items.length;
+      if (e.key === 'ArrowDown') {
+        this.currentFocus++
+        if (this.currentFocus > totalNumberOfLists) this.currentFocus = 1
+      }
+      this.setFocus(e)
+    },
+    setFocus(e) {
+      const currentElement = e.target;
+
+      let liElement;
+      if (currentElement.tagName === 'LI')
+        liElement = currentElement
+      else
+        liElement = currentElement.parentElement;
+
+      const focusElm = liElement.parentElement.querySelector('li[tabindex="0"]')
+      focusElm.focus();
     },
     addToLocalStorage() {
       localStorage.setItem('todoList', JSON.stringify(this.items));
@@ -65,6 +80,10 @@ let vm = new Vue({
         localStorage.clear();
         console.warn('%clocalStorage data is automatically cleared', 'color: lime; font-weight: bold');
       }
+      const ol = this.$refs.ol;
+      ol.firstElementChild.setAttribute('tabindex', '0')
+      ol.firstElementChild.firstElementChild.setAttribute('tabindex', '0') // checkbox
+      ol.firstElementChild.lastElementChild.setAttribute('tabindex', '0') // button
     }
   }
 });

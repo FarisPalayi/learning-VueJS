@@ -5,16 +5,18 @@ body {
 .title-wrapper {
     height: fit-content;
     width: fit-content;
+    width: 100%;
 }
 
 .title {
+    width: 100%;
     color: cyan;
     text-shadow: 0px 0px 0px cyan,
                  -1px -3px 0px tomato,
                  -1px -4px 0px yellow;
     font-size: 2.5rem;
     text-align: center;
-    margin: 3rem;
+    margin: 3rem 0;
     transition: transform 300ms;
 }
 
@@ -112,6 +114,11 @@ label > span {
     white-space: nowrap;
     overflow: auto;
     margin-bottom: -10px;
+}
+
+li:focus-within {
+    border: 3px red solid;
+    outline: 3px white;
 }
 
 .active-item {
