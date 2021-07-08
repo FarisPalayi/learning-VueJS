@@ -13,10 +13,13 @@
     <script src="../Vue/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
     <script src="./new.js" defer></script>
+    <script src="https://unpkg.com/vuex@3.6.2/dist/vuex.js"></script>
   </head>
   <body>
     <div id="app">
-      <tabs></tabs>
+      <h1 align=center>{{ count }}</h1>
+      <button @click='increment'>increment</button>
+      <button @click='decrement'>decrement</button>
     </div>
   </body>
 </html>
