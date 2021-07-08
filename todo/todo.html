@@ -30,26 +30,34 @@
         :placeholder="placeholder"
       />
       <button 
-       class="add-btn"
-       @click="addItem"
-       >
-       Add
-    </button>
+        class="add-btn"
+        @click="addItem"
+      >
+        Add
+      </button>
     </div>
 
       <ol>
-        <li v-for="(item, i) in items">
+        <li 
+          v-for="(item, i) in items"
+          @keydown="setFocus"
+          :tabindex="tabindex" 
+          :class='{"active-item": currentFocus === i+1}'
+        >
           <input type="checkbox" :id="[i]" @keydown.enter="tic">
           <label :for="[i]"><span>{{ item.text }}</span></label>
           <button 
             @click="items.splice(i, 1)" 
-            class="remove-btn">
+            class="remove-btn"
+          >
             remove
-        </button>
+          </button>
         </li>
       </ol>
 
     </div>
-    <footer id="footer"><hyperlink></hyperlink></footer>
+    <footer id="footer">
+      <hyperlink></hyperlink>
+    </footer>
   </body>
 </html>

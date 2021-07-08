@@ -9,6 +9,8 @@ let vm = new Vue({
     ],
     nextTodoId: 4,
     newTodoText: "",
+    currentFocus: 0,
+    tabindex: 0
   },
   methods: {
     addItem: function () {
@@ -18,6 +20,28 @@ let vm = new Vue({
     },
     tic: function(e) {
       e.target.checked = !e.target.checked;
+    },
+    navigate: function(e) {
+      e.target.focus();
+    },
+    setFocus: function (e) {
+      let totalNumberOfLists = this.items.length;
+
+      if (e.key === 'ArrowDown') {
+        this.currentFocus++
+        if (this.currentFocus > totalNumberOfLists) this.currentFocus = 1
+      }
+      if (e.key === 'ArrowUp') {
+        this.currentFocus--
+        if (this.currentFocus < 1) this.currentFocus = totalNumberOfLists
+      }
+
+      console.log(this.currentFocus);
+      
+      // if(this.currentFocus === this.items.id) {
+      //   console.log(true);
+      //   return focus()
+      // }
     }
   },
 });

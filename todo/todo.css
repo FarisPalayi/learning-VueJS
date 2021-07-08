@@ -18,7 +18,7 @@ body {
     transition: transform 300ms;
 }
 
-.title-wrapper:hover .title{
+.title-wrapper:hover .title {
     transform: translateY(2px) skew(90deg);
 }
 
@@ -29,12 +29,17 @@ body {
     justify-content: center;
 }
 
+ol {
+    padding-left: 18px;
+}
+
 li {
     padding: 5px;
     margin: 5px;
     font-size: 1.2rem;
     list-style-type: none;
     padding-left: 39px;
+    white-space: nowrap;
 }
 
 li::marker {
@@ -49,10 +54,6 @@ li::marker {
 }
 .add-btn {
     width: 120px;
-}
-
-input[type=checkbox]:checked ~ label{
-    text-decoration: line-through;
 }
 
 .hyperlink::after {
@@ -72,16 +73,17 @@ input[type=checkbox] {
     opacity: 0;
 }
 
+input[type=checkbox]:checked + label{
+    text-decoration: line-through;
+}
+
 input[type=checkbox]:checked + label::after {
     content: '\2714';
 	font-size: 14px;
 	position: absolute;
-	top: -8px;
-    left: -40px;
+	top: -5px;
+    left: -39px;
     font-size: 25px;
-    /* background: deeppink;
-    border: 1.5px solid;
-    padding: 0 5px; */
 }
 
 input[type=checkbox] + label::before {
@@ -105,8 +107,13 @@ label > span {
     display: inline-block;
     width: 215px;
     padding: 5px 11px;
-    box-shadow: 1px 1px 3px rgb(0 0 0 / 40%);
+    /* box-shadow: 1px 1px 3px rgb(0 0 0 / 40%); */
     white-space: nowrap;
     overflow: auto;
     margin-bottom: -10px;
+}
+
+.active-item {
+    outline: 2px white solid;
+    background: rgb(29, 34, 82);
 }
