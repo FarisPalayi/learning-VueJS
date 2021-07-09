@@ -26,12 +26,15 @@
           name="search"
           id="search"
           @input="search"
+          @change="search"
+          @focus="search"
           v-model="input"
           placeholder="type a word..."
           ref="search"
           list="list"
           size="36"
           results="4"
+          autocomplete="off"
         />
         <datalist id="list">
           <optgroup>
