@@ -1,32 +1,36 @@
+const wordDatabase = [
+  "You",
+  "are",
+  "running",
+  "Vue",
+  "in",
+  "development",
+  "mode",
+  "Make",
+  "sure",
+  "to",
+  "turn",
+  "on",
+  "production",
+  "mode",
+  "when",
+  "deploying",
+  "for",
+  "production",
+  "See",
+  "more",
+  "tips",
+  "at",
+  "search",
+];
+
 const store = new Vuex.Store({
   state: {
     title: "This is the heading",
     query: "",
-    words: [
-      "You",
-      "are",
-      "running",
-      "Vue",
-      "in",
-      "development",
-      "mode",
-      "Make",
-      "sure",
-      "to",
-      "turn",
-      "on",
-      "production",
-      "mode",
-      "when",
-      "deploying",
-      "for",
-      "production",
-      "See",
-      "more",
-      "tips",
-      "at",
-      "search",
-    ],
+    // this is the word database
+    words: wordDatabase,
+    // this is where searched words are stored
     searchedWordList: [],
   },
   mutations: {
@@ -59,7 +63,7 @@ new Vue({
     },
   },
   mounted() {
-    this.$store.commit("search", "");
+    this.$store.commit("search", ""); // to add every word to searchedWordList
   },
   methods: {
     search(e) {
