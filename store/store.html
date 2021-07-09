@@ -27,11 +27,13 @@
           id="search"
           @input="search"
           v-model="input"
+          placeholder="type a word..."
+          ref="search"
         />
       </div>
       <div class="card-container">
         <button v-for="word in searchedWordList">{{ word }}</button>
-        <!-- <div v-if="searchedWordList.length < 0"></div> -->
+        <div v-if="!searchedWordList.length">No result found😥</div>
       </div>
     </div>
   </body>

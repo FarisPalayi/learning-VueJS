@@ -1,41 +1,14 @@
-const wordDatabase = [
-  "You",
-  "are",
-  "running",
-  "Vue",
-  "in",
-  "development",
-  "mode",
-  "Make",
-  "sure",
-  "to",
-  "turn",
-  "on",
-  "production",
-  "mode",
-  "when",
-  "deploying",
-  "for",
-  "production",
-  "See",
-  "more",
-  "tips",
-  "at",
-  "search",
-];
-
 const store = new Vuex.Store({
+  strict: true,
   state: {
-    title: "This is the heading",
+    title: "Search a word",
     query: "",
-    // this is the word database
-    words: wordDatabase,
-    // this is where searched words are stored
-    searchedWordList: [],
+    words: [], // this will be populated when we get data
+    searchedWordList: [], // this too
   },
   mutations: {
-    search(state, input) {
-      state.query = input;
+    search(state, obj) {
+      state.query = obj.input;
 
       const searchedWordListArr = state.words.filter((word) => {
         const formattedWord = word.toLowerCase().trim();
@@ -46,6 +19,14 @@ const store = new Vuex.Store({
     },
   },
   getters: {},
+  actions: {
+    getDataAndSearch(context, input) {
+      fetch("./data.json")
+        .then((res) => res.json())
+        .then((data) => context.commit("search", { input, data }))
+        .catch((err) => Error(err));
+    },
+  },
 });
 
 new Vue({
@@ -63,12 +44,13 @@ new Vue({
     },
   },
   mounted() {
-    this.$store.commit("search", ""); // to add every word to searchedWordList
+    // this.$store.commit("search", ""); // to add every word to searchedWordList
+    this.$refs.search.focus();
   },
   methods: {
     search(e) {
       const formattedUserInput = e.target.value.toLowerCase().trim();
-      this.$store.commit("search", formattedUserInput);
+      this.$store.dispatch("getDataAndSearch", formattedUserInput);
     },
   },
 });

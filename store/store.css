@@ -12,7 +12,7 @@ header {
   color: white;
   height: 75px;
   width: 100%;
-  backdrop-filter: blur(1px);
+  backdrop-filter: blur(1.4px);
   top: 0;
   left: 0;
 
@@ -45,6 +45,10 @@ header > h1 {
   border: 2px solid #2f4f4fc2;
 }
 
+::placeholder {
+  color: rgba(47, 79, 79, 0.685);
+}
+
 .card-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -56,12 +60,13 @@ header > h1 {
 .card-container > * {
   background-color: darkgray;
   background-image: linear-gradient(-45deg, cadetblue, darkslategray);
-  color: white;
+  color: #ffffffd1;
   font-weight: bold;
   display: grid;
   place-items: center;
   border-radius: 5px;
   box-shadow: 2px 2px 5px #00000023;
-  font-family: sans-serif;
+  font-family: monospace;
   border: none;
+  font-size: 0.9rem;
 }
