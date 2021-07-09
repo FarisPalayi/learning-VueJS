@@ -46,3 +46,11 @@ let vm = new Vue({
     },
   },
 });
+
+Vue.component("hyperlink", {
+  template: '<a href="../store/store.html" class="hyperlink">Store</a>',
+});
+
+let footer = new Vue({
+  el: "#footer",
+});

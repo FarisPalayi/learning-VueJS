@@ -67,3 +67,11 @@ new Vue({
     },
   },
 });
+
+Vue.component("hyperlink", {
+  template: '<a href="../index.html" class="hyperlink">Home 🏠</a>',
+});
+
+let footer = new Vue({
+  el: "#footer",
+});
