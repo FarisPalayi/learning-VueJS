@@ -33,7 +33,7 @@
       </div>
       <div class="card-container">
         <button v-for="word in searchedWordList">{{ word }}</button>
-        <div v-if="!searchedWordList.length">No result found😥</div>
+        <div v-if="noResult">No result found😥</div>
       </div>
     </div>
   </body>
