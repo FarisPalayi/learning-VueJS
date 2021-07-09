@@ -1,35 +1,48 @@
+// STORE - doesn't do anything
 const store = new Vuex.Store({
   state: {
-    count: 0
+    count: 0,
+    items: ["item1", "item2", "item3"],
   },
   mutations: {
-    increment (state) {
-      state.count++
+    increment(state) {
+      state.count++;
     },
-    decrement (state) {
-      state.count--
-    }
-  }
-})
+    decrement(state) {
+      state.count--;
+    },
+  },
+  getters: {
+    lastRemoved(state) {
+      return state.items.pop();
+    },
+  },
+});
 
-store.commit('increment')
+// COMPONENTS
+Vue.component("card", {
+  template: `<div class='card'>
+        <slot></slot>
+     </div>`,
+});
 
-console.log(store.state.count)
+store.commit("increment");
 
-new Vue({
-  el: '#app',
+// Actions
+let vm = new Vue({
+  el: "#app",
   store,
   computed: {
     count() {
       return this.$store.state.count;
-    }
+    },
   },
   methods: {
     increment() {
-      this.$store.commit('increment')
+      this.$store.commit("increment");
     },
     decrement() {
-      this.$store.commit('decrement')
-    }
-  }
-})
+      this.$store.commit("decrement");
+    },
+  },
+});

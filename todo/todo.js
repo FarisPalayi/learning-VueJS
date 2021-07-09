@@ -98,7 +98,7 @@ let vm = new Vue({
 });
 
 Vue.component('hyperlink', {
-  template: '<a href="../index.html" class="hyperlink">home 🏠</a>'
+  template: '<a href="../new/new.html" class="hyperlink">New</a>'
 })
 
 let footer = new Vue({

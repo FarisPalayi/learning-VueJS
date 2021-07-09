@@ -59,10 +59,6 @@ li::marker {
     width: 120px;
 }
 
-.hyperlink::after {
-    content: none;
-}
-
 /** new */
 
 label {
