@@ -1,123 +1,122 @@
 body {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 .title-wrapper {
-    height: fit-content;
-    width: fit-content;
-    width: 100%;
+  height: fit-content;
+  width: fit-content;
+  width: 100%;
 }
 
 .title {
-    width: 100%;
-    color: cyan;
-    text-shadow: 0px 0px 0px cyan,
-                 -1px -3px 0px tomato,
-                 -1px -4px 0px yellow;
-    font-size: 2.5rem;
-    text-align: center;
-    margin: 3rem 0;
-    transition: transform 300ms;
+  width: 100%;
+  color: cyan;
+  text-shadow: 0px 0px 0px cyan, -1px -3px 0px tomato, -1px -4px 0px yellow;
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 3rem 0;
+  transition: transform 300ms;
 }
 
 .title-wrapper:hover .title {
-    transform: translateY(2px) skew(90deg);
+  transform: translateY(2px) skew(90deg);
 }
 
 .input-button-wrapper {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 ol {
-    padding-left: 18px;
+  padding-left: 18px;
 }
 
 li {
-    padding: 5px;
-    margin: 5px;
-    font-size: 1.2rem;
-    list-style-type: none;
-    padding-left: 39px;
-    white-space: nowrap;
+  padding: 5px;
+  margin: 5px;
+  font-size: 1.2rem;
+  list-style-type: none;
+  padding-left: 39px;
+  white-space: nowrap;
+  border: 2px solid transparent;
 }
 
 li::marker {
-    color: coral;
+  color: coral;
 }
 
 .remove-btn {
-    width: 90px;
-    border-radius: 20px;
-    height: 30px;
-    padding: 0;
+  width: 90px;
+  border-radius: 20px;
+  height: 30px;
+  padding: 0;
 }
 
 .add-btn {
-    width: 120px;
+  width: 120px;
 }
 
 /** new */
 
 label {
-	display: inline;
-    position: relative;
+  display: inline;
+  position: relative;
 }
 
-input[type=checkbox] {
-	height: .0000001px;
-    width: .0000001px;
-    opacity: 0;
+input[type="checkbox"] {
+  height: 0.0000001px;
+  width: 0.0000001px;
+  opacity: 0;
 }
 
-input[type=checkbox]:checked + label > span{
-    text-decoration: line-through;
+input[type="checkbox"]:checked + label > span {
+  text-decoration: line-through;
 }
 
-input[type=checkbox]:checked + label::after {
-    content: '\2714';
-	font-size: 14px;
-	position: absolute;
-	top: -5px;
-    left: -39px;
-    font-size: 25px;
+input[type="checkbox"]:checked + label::after {
+  content: "\2714";
+  font-size: 14px;
+  position: absolute;
+  top: -5px;
+  left: -39px;
+  font-size: 25px;
 }
 
-input[type=checkbox] + label::before {
-    content: '';
-    position: absolute;
-    background-color: deeppink;
-    width: 25px;
-    height: 25px;
-    top: -1px;
-    left: -43px;
-    border: 1.5px solid;
-    box-shadow: 2px 1px 3px 0px rgba(0, 0, 0, 0.1);
+input[type="checkbox"] + label::before {
+  content: "";
+  position: absolute;
+  background-color: deeppink;
+  width: 25px;
+  height: 25px;
+  top: -1px;
+  left: -43px;
+  border: 1.5px solid;
+  box-shadow: 2px 1px 3px 0px rgba(0, 0, 0, 0.1);
 }
 
-input[type=checkbox]:focus + label::before {
-    outline: solid 1px;
-    outline-offset: 2px;
+input[type="checkbox"]:focus + label::before {
+  outline: solid 1px;
+  outline-offset: 2px;
 }
 
 label > span {
-    display: inline-block;
-    width: 215px;
-    padding: 5px 11px;
-    /* box-shadow: 1px 1px 3px rgb(0 0 0 / 40%); */
-    white-space: nowrap;
-    overflow: auto;
-    margin-bottom: -10px;
+  display: inline-block;
+  width: 215px;
+  padding: 5px 11px;
+  /* box-shadow: 1px 1px 3px rgb(0 0 0 / 40%); */
+  white-space: nowrap;
+  overflow: auto;
+  margin-bottom: -10px;
 }
 
 li:focus-within {
-    border: 3px red solid;
-    outline: 3px white;
+  border: 2px red solid;
+  outline: 3px white;
 }
 
 .active-item {
-    outline: 2px white solid;
-    background: rgb(29, 34, 82);
+  outline: 2px white solid;
+  /* background: rgb(29, 34, 82); */
 }

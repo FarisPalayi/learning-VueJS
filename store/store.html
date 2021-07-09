@@ -29,7 +29,21 @@
           v-model="input"
           placeholder="type a word..."
           ref="search"
+          list="list"
+          size="36"
+          results="4"
         />
+        <datalist id="list">
+          <optgroup>
+            <option
+              v-for="(word, i) in searchedWordList"
+              :value="word"
+              v-if="i < 4"
+            >
+              {{ word }}
+            </option>
+          </optgroup>
+        </datalist>
       </div>
       <div class="card-container">
         <button v-for="word in searchedWordList">{{ word }}</button>
