@@ -6,26 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="darkcyan" />
     <meta name="apple-mobile-web-app-status-bar-style" content="darkcyan" />
-    <title>Articles</title>
+    <title>Blog</title>
     <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="../global.css" />
     <link rel="stylesheet" href="./http.css" />
+    <link rel="stylesheet" href="./blog.css" />
     <script src="../Vue/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
     <script src="./http.js" defer></script>
     <script src="https://unpkg.com/vuex@3.6.2/dist/vuex.js"></script>
   </head>
   <body>
-    <header id="header">
-      <top-section>Recent Articles</top-section>
-    </header>
-
-    <main id="main">
-      <blog-preview v-for="i in 6"/>
-    </main>
-
-    <footer id="footer">
-      <hyper-link />
-    </footer>
+    <div id="write">
+      <full-article />
+    </div>
   </body>
 </html>

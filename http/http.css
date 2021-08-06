@@ -12,12 +12,18 @@ body {
   justify-content: space-between;
 }
 
-.write,
-.write:hover {
-  box-shadow: none;
-  transform: none;
-  width: 108px;
+.write {
+  display: block;
+  width: 90px;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+  color: rgb(240, 240, 240);
   background-color: cadetblue;
+  white-space: nowrap;
+  font: normal .92rem sans-serif;
+  cursor: pointer;
 }
 
 .article a {
@@ -30,7 +36,7 @@ body {
 .article {
   margin: 8px 0;
   padding: 20px;
-  background-color: #182f2b;
+  background-color: #182f2b99;
   font-weight: normal;
   font-size: 1rem;
   border-radius: 6px;
