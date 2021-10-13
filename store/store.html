@@ -10,9 +10,10 @@
     <!-- <link rel="stylesheet" href="../style.css" /> -->
     <link rel="stylesheet" href="../global.css" />
     <link rel="stylesheet" href="./store.css" />
-    <script src="../Vue/vue.js"></script>
+    <script src="../vendor/Vue/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
     <script src="./store.js" defer></script>
+    <script src="../vendor/Vue/vuex.js"></script>
     <script src="https://unpkg.com/vuex@3.6.2/dist/vuex.js"></script>
   </head>
   <body>
@@ -52,6 +53,12 @@
         <button v-for="word in searchedWordList">{{ word }}</button>
         <div v-if="noResult">No result found😥</div>
       </div>
+      <ul>
+        <li v-if="$fetchData.pending">Fetching data...</li>
+        <li v-for="word in wordsApi">
+          {{ word }}
+        </li>
+      </ul>
       <footer id="footer"><hyperlink></hyperlink></footer>
     </div>
   </body>
