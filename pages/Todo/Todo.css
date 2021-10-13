@@ -47,6 +47,11 @@
   color: coral;
 }
 
+.td-todo:focus-within {
+  border: 2px red solid;
+  outline: 3px white;
+}
+
 .td-todo__label {
   display: inline;
   position: relative;
@@ -97,11 +102,6 @@
   white-space: nowrap;
   overflow: auto;
   margin-bottom: -10px;
-}
-
-li:focus-within {
-  border: 2px red solid;
-  outline: 3px white;
 }
 
 .active-item {
