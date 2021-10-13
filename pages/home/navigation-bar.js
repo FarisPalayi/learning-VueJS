@@ -1,4 +1,4 @@
-export default {
+const navigationBar = {
   template: `
     <header class="nb-header">
       <nav class="nb-nav">
@@ -17,3 +17,5 @@ export default {
     </header>
   `,
 };
+
+export default Vue.component("navigation-bar", navigationBar);
