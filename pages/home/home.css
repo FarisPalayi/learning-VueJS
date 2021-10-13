@@ -1,4 +1,4 @@
-.h-home {
+.hm-home {
   margin: 0;
   padding: 0;
   height: calc(100vh - 54px); /* subtract the height of the top navbar*/
@@ -11,33 +11,33 @@
   padding: 1em;
 }
 
-.h-header {
+.hm-header {
   box-sizing: content-box;
 }
 
-.h-h1 {
+.hm-h1 {
   font-size: 2rem;
   margin: 0;
 }
 
-.h-h2 {
+.hm-h2 {
   color: skyblue;
   font-size: 20px;
   margin: 0;
 }
 
-.h-h3 {
+.hm-h3 {
   color: rgb(211, 173, 241);
   font-size: 20px;
   margin: 0;
   font-weight: bold;
 }
 
-.h-h4 {
+.hm-h4 {
   margin: 26px 0;
 }
 
-.h-list {
+.hm-list {
   color: white;
   max-height: max(38vh, 135px);
   overflow-y: auto;
@@ -45,51 +45,10 @@
   padding-left: 40px;
 }
 
-.h-list__item {
+.hm-list__item {
   font-weight: normal;
 }
 
-.h-btn {
+.hm-btn {
   width: 190px;
-  height: 40px;
-  padding: 8px;
-  border-radius: 5px;
-  box-shadow: 3px 3px 5px rgba(56, 56, 56, 0.397);
-  color: rgb(240, 240, 240);
-  background-color: deeppink;
-  white-space: nowrap;
-  transition: background-color 500ms, box-shadow 500ms, transform 500ms;
-  border: none;
-  font-size: 0.92rem;
-  cursor: pointer;
-}
-
-.h-btn:hover {
-  background-color: rgb(255, 0, 0);
-  transform: translateY(-1.5px) scale(1.007);
-  transition: background-color 200ms, transform 200ms;
-}
-
-.h-btn:active {
-  box-shadow: 0px 0px 0px rgba(56, 56, 56, 0.397);
-  transform: translateY(3px);
-  transition: background-color 200ms, box-shadow 100ms, transform 100ms;
-}
-
-.h-input {
-  width: 250px;
-  height: 42px;
-  border-radius: 15px;
-  border: none;
-  margin: 1em;
-  color: rgb(99, 99, 99);
-  text-align: center;
-  font-size: 0.9rem;
-  outline: none;
-  transition: transform 300ms;
-}
-
-.h-input:hover,
-.h-input:focus {
-  transform: scale(1.01);
 }

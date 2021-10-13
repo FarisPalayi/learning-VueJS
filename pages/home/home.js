@@ -75,20 +75,20 @@ const home = {
   data,
   methods,
   template: `
-    <div class="h-home">
-      <header class="h-header">
-        <h1 class="h-h1" v-bind:title="title">{{ header1 }}</h1>
-        <h2 class="h-h2">{{ header2 }}</h2>
-        <div class="h-h3" v-if="show">{{ header3 }}</div>
+    <div class="hm-home">
+      <header class="hm-header">
+        <h1 class="hm-h1" v-bind:title="title">{{ header1 }}</h1>
+        <h2 class="hm-h2">{{ header2 }}</h2>
+        <div class="hm-h3" v-if="show">{{ header3 }}</div>
       </header>
       <main>
-        <h4 class="h-h4">{{ message }}</h4>
-        <ul class="h-list">
-          <li v-for="list in lists" class="h-list__item">
+        <h4 class="hm-h4">{{ message }}</h4>
+        <ul class="hm-list">
+          <li v-for="list in lists" class="hm-list__item">
             {{ list.item }}
           </li>
         </ul>
-        <button v-on:click="add" class="h-btn">
+        <button v-on:click="add" class="hm-btn u-btn">
           {{ btnMessage }}
         </button>
         <input
@@ -96,7 +96,7 @@ const home = {
           v-on:change="input"
           v-bind:placeholder="placeholder"
           v-model="value"
-          class="h-input"
+          class="u-input"
         />
       </main>
     </div>
