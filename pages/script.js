@@ -1,6 +1,6 @@
 import routes from "../routes/routes.js";
-import navigationBar from "../components/base/navigation-bar/navigation-bar.js";
-import home from "./home/home.js";
+import NavigationBar from "../components/base/NavigationBar/NavigationBar.js";
+import Home from "./Home/Home.js";
 
 const router = new VueRouter({ routes });
 
