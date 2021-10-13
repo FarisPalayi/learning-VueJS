@@ -19,7 +19,7 @@ const ComponentName = {
   template: `<div>html goes here</div>`,
 };
 
-export default Vue.component("home", ComponentName); // Vue is loaded via `<script>` tag.
+export default Vue.component("component-name", ComponentName); // Vue is loaded via `<script>` tag.
 ```
 
 ```js
