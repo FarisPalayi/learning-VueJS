@@ -1,6 +1,5 @@
 import Home from "../pages/Home/Home.js"
-// import Cards from "../pages/cards/cards.js"
-const Cards = { template: "<h2>Cards</h2>" };
+import Cards from "../pages/Cards/Cards.js"
 
 export default [
   { path: "/", component: Home },

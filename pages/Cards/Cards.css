@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  background-color: darkcyan;
+  color: rgb(247, 203, 121);
+  font-size: 20px;
+  font-family: sans-serif;
+}
+
+.cd-card-container {
+  --delay: 200ms;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: 350px;
+  gap: 35px;
+  padding: 1em;
+}
+
+.cd-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  font-size: 4rem;
+  display: grid;
+  place-items: center;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.205);
+  text-shadow: 2px 2px 5px #0000006e;
+  transition: transform 300ms, box-shadow 300ms;
+  animation: card 700ms backwards;
+  animation-delay: var(--delay);
+  position: relative;
+}
+
+.cd-card:hover {
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
+  transform: scale(1.01);
+}
+
+.cd-card::before,
+.cd-card::after {
+  content: attr(data-value);
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 1.7rem;
+  text-shadow: none;
+  animation: card 1000ms backwards;
+  animation-delay: calc(14 * var(--delay));
+}
+
+.cd-card::after {
+  top: auto;
+  left: auto;
+  bottom: 20px;
+  right: 20px;
+  transform: rotate(180deg);
+  animation: content 1000ms backwards;
+  animation-delay: calc(14 * var(--delay));
+}
+
+@keyframes card {
+  from {
+    opacity: 0;
+    filter: hue-rotate(0deg);
+    transform: scale(0.3);
+  }
+  to {
+    opacity: 1;
+    filter: hue-rotate(360deg);
+    transform: scale(1);
+  }
+}
+
+@keyframes content {
+  from {
+    opacity: 0;
+    filter: hue-rotate(0deg);
+    transform: scale(0.3) rotate(180deg);
+  }
+  to {
+    opacity: 1;
+    filter: hue-rotate(360deg);
+    transform: scale(1) rotate(180deg);
+  }
+}
+
+.cd-card:nth-child(1) { animation-delay: calc(1 * var(--delay)) }
+.cd-card:nth-child(2) { animation-delay: calc(2 * var(--delay)) }
+.cd-card:nth-child(3) { animation-delay: calc(3 * var(--delay)) }
+.cd-card:nth-child(4) { animation-delay: calc(4 * var(--delay)) }
+.cd-card:nth-child(5) { animation-delay: calc(5 * var(--delay)) }
+.cd-card:nth-child(6) { animation-delay: calc(6 * var(--delay)) }
+.cd-card:nth-child(7) { animation-delay: calc(7 * var(--delay)) }
+.cd-card:nth-child(8) { animation-delay: calc(8 * var(--delay)) }
