@@ -57,6 +57,7 @@ picture {
 
 button {
   cursor: pointer;
+  user-select: none;
 }
 
 /* Inherit fonts for inputs and buttons */

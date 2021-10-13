@@ -75,23 +75,28 @@ const home = {
   data,
   methods,
   template: `
-    <div>
-      <header id="header">
-        <h1 class="title" v-bind:title="title">{{ header1 }}</h1>
-        <h2 class="title2">{{ header2 }}</h2>
-        <div class="title3" v-if="show">{{ header3 }}</div>
+    <div class="h-home">
+      <header class="h-header">
+        <h1 class="h-h1" v-bind:title="title">{{ header1 }}</h1>
+        <h2 class="h-h2">{{ header2 }}</h2>
+        <div class="h-h3" v-if="show">{{ header3 }}</div>
       </header>
-      <main id="main">
-        <h4>{{ message }}</h4>
-        <ul>
-          <li v-for="list in lists">{{ list.item }}</li>
+      <main>
+        <h4 class="h-h4">{{ message }}</h4>
+        <ul class="h-list">
+          <li v-for="list in lists" class="h-list__item">
+            {{ list.item }}
+          </li>
         </ul>
-        <button v-on:click="add">{{ btnMessage }}</button>
+        <button v-on:click="add" class="h-btn">
+          {{ btnMessage }}
+        </button>
         <input
           type="text"
           v-on:change="input"
           v-bind:placeholder="placeholder"
           v-model="value"
+          class="h-input"
         />
       </main>
     </div>
