@@ -1,10 +1,12 @@
 body {
   background-color: darkcyan;
 }
+
 footer {
   display: flex;
   justify-content: center;
 }
+
 .hyperlink {
   text-decoration: none;
   display: inline-block;
@@ -24,6 +26,7 @@ footer {
   margin-top: 25px;
   margin-bottom: 30px;
 }
+
 .hyperlink::after {
   content: ">";
   position: absolute;
@@ -33,6 +36,7 @@ footer {
   transition: transform 300ms ease-out;
   opacity: 0;
 }
+
 .hyperlink:hover::after,
 .hyperlink:focus::after {
   opacity: 1;

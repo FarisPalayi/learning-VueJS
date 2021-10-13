@@ -1,0 +1,9 @@
+p {
+  font-weight: normal;
+  color: white;
+  line-height: 1.35;
+}
+
+.full-article {
+  width: clamp(300px, 75vw, 690px);
+}

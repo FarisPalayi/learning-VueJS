@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="darkcyan" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="darkcyan" />
+    <title>Todo</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../global.css" />
+    <link rel="stylesheet" href="./todo.css" />
+    <script src="../vendor/Vue/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script src="./todo.js" defer></script>
+  </head>
+  <body>
+    <div id="app">
+
+    <div class="title-wrapper">
+      <h1 class="title">Todo App</h1>
+    </div>
+
+    <div class="input-button-wrapper">
+      <input
+        type="text"
+        v-model="newTodoText"
+        @keydown.enter="addItem"
+        :placeholder="placeholder"
+      />
+      <button 
+        class="add-btn"
+        @click="addItem"
+      >
+        Add
+      </button>
+    </div>
+
+      <ol ref="ol">
+        <li 
+          v-for="(item, i) in items"
+          @keydown.up="up"
+          @keydown.down="down"
+          :tabindex="(currentFocus === i+1) ? 0: -1" 
+          :class='{"active-item": currentFocus === i+1}'
+        >
+          <input
+            type="checkbox"
+            @keydown.enter="tic"
+            @change='tic'
+            :id="[i]"
+            :checked='item.isChecked'
+            :tabindex="(currentFocus === i+1) ? 0: -1" 
+          >
+          <label :for="[i]"><span>{{ item.text }}</span></label>
+          <button 
+            @click='deleteTodo'
+            class="remove-btn"
+            :tabindex="(currentFocus === i+1) ? 0: -1" 
+          >
+            remove
+          </button>
+        </li>
+      </ol>
+
+    </div>
+    <footer id="footer">
+      <hyperlink></hyperlink>
+    </footer>
+  </body>
+</html>

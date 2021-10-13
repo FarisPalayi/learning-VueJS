@@ -1,0 +1,145 @@
+{
+  "0": {
+    "definitions": [
+      {
+        "definition": "ten 10s",
+        "partOfSpeech": "noun",
+        "synonyms": ["c", "century", "hundred", "one c"],
+        "typeOf": ["large integer"]
+      },
+      {
+        "definition": "being ten more than ninety",
+        "partOfSpeech": "adjective",
+        "synonyms": ["c", "hundred", "one hundred"],
+        "similarTo": ["cardinal"]
+      }
+    ],
+    "letters": 3
+  },
+  "110": {
+    "definitions": [
+      {
+        "definition": "being ten more than one hundred",
+        "partOfSpeech": "adjective",
+        "synonyms": ["cx", "one hundred ten"],
+        "similarTo": ["cardinal"]
+      }
+    ],
+    "letters": 3
+  },
+  "170": {
+    "definitions": [
+      {
+        "definition": "being ten more than one hundred sixty",
+        "partOfSpeech": "adjective",
+        "synonyms": ["clxx", "one hundred seventy"],
+        "similarTo": ["cardinal"]
+      }
+    ],
+    "letters": 3
+  },
+  "175": {
+    "definitions": [
+      {
+        "definition": "being five more than one hundred seventy",
+        "partOfSpeech": "adjective",
+        "synonyms": ["clxxv", "one hundred seventy-five"],
+        "similarTo": ["cardinal"]
+      }
+    ],
+    "letters": 3
+  },
+  "1000": {
+    "definitions": [
+      {
+        "definition": "denoting a quantity consisting of 1,000 items or units",
+        "partOfSpeech": "adjective",
+        "synonyms": ["k", "m", "one thousand", "thousand"],
+        "similarTo": ["cardinal"]
+      },
+      {
+        "definition": "the cardinal number that is the product of 10 and 100",
+        "partOfSpeech": "noun",
+        "synonyms": [
+          "chiliad",
+          "g",
+          "grand",
+          "k",
+          "m",
+          "one thousand",
+          "thou",
+          "thousand",
+          "yard"
+        ],
+        "typeOf": ["large integer"],
+        "hasTypes": ["millenary"]
+      }
+    ],
+    "letters": 4
+  },
+  "1000000": {
+    "definitions": [
+      {
+        "definition": "the number that is represented as a one followed by 6 zeros",
+        "partOfSpeech": "noun",
+        "synonyms": ["meg", "million", "one thousand thousand"],
+        "typeOf": ["large integer"]
+      }
+    ],
+    "letters": 7
+  },
+  "a fortiori": {
+    "syllables": { "count": 4, "list": ["a for", "ti", "o", "ri"] },
+    "pronunciation": { "all": "ɑ_,foʊRtɪ'oʊRi", "simplified": "ɑfoʊRtɪoʊRi" },
+    "rhymePatterns": { "all": "-oʊRi" },
+    "definitions": [],
+    "letters": 9,
+    "sounds": 11
+  },
+  "aarhus": {
+    "syllables": { "count": 2, "list": ["aar", "hus"] },
+    "definitions": [
+      {
+        "definition": "port city of Denmark in eastern Jutland",
+        "partOfSpeech": "noun",
+        "synonyms": ["arhus"],
+        "instanceOf": ["metropolis", "port", "urban center", "city"],
+        "partOf": ["kingdom of denmark", "danmark", "denmark"]
+      }
+    ],
+    "letters": 6,
+    "frequency": { "zipf": 2.3, "perMillion": 0.19, "diversity": 0 }
+  },
+  "aaron's beard": {
+    "syllables": { "count": 3, "list": ["aa", "ron's", "beard"] },
+    "letters": 12
+  },
+  "ab ovo": {
+    "syllables": { "count": 3, "list": ["ab", "o", "vo"] },
+    "pronunciation": { "all": "ɑb_'oʊwoʊ", "simplified": "ɑboʊwoʊ" },
+    "rhymePatterns": { "all": "-oʊwoʊ" },
+    "letters": 5,
+    "sounds": 7
+  },
+  "abd-al-kadir": {
+    "syllables": { "count": 2, "list": ["abd-al-ka", "dir"] },
+    "pronunciation": { "all": ",ɑbdæl_'kɑdir", "simplified": "ɑbdælkɑdir" },
+    "rhymePatterns": { "all": "-ɑdir" },
+    "letters": 12,
+    "sounds": 10
+  },
+  "abbai": {
+    "syllables": { "count": 2, "list": ["ab", "bai"] },
+    "pronunciation": { "all": "ɑ'baɪ", "simplified": "ɑbaɪ" },
+    "rhymePatterns": { "all": "-aɪ" },
+    "letters": 5,
+    "sounds": 4
+  },
+  "abbeystead": {
+    "syllables": { "count": 3, "list": ["ab", "bey", "stead"] },
+    "pronunciation": { "all": "'æbi,stɛd", "simplified": "æbistɛd" },
+    "rhymePatterns": { "all": "-ɛd" },
+    "letters": 10,
+    "sounds": 7
+  }
+}
