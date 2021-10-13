@@ -1,0 +1,35 @@
+.lk-root {
+  display: grid;
+  place-items: center;
+  min-height: calc(100vh - 56px);
+}
+
+.lk-like,
+.lk-dislike {
+  width: 60px;
+  height: fit-content;
+  padding: 0;
+  font-size: 2em;
+  background-color: transparent;
+  box-shadow: none;
+  transition: filter 300ms;
+  filter: drop-shadow(2px 2px 0px hsl(43, 100%, 62%,.5));
+  margin-right: 30px;
+}
+
+.lk-like:hover, .lk-like:active, .lk-dislike:hover, .lk-dislike:active { background-color: transparent }
+.lk-like:active { transform: translateY(2px); filter: hue-rotate(68deg) }
+.lk-like:active ~ .lk-like-count{ color: #1cff00}
+.lk-dislike:disabled{ filter: saturate(0) }
+.lk-dislike:disabled:hover { transform: none }
+.lk-dislike:active { filter: hue-rotate(308deg) saturate(4)}
+.lk-dislike:active ~ .lk-like-count{ color: rgb(209, 28, 28) }
+
+.lk-like-count {
+  height: 24px;
+  width: 30px;
+  padding: 8px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  position: absolute;
+  transform: translate(-125px, 13px);
+}
