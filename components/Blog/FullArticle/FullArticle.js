@@ -11,7 +11,6 @@ const FullArticle = {
   template: `
     <div class="bl-article-container">
       <article class="bl-article">
-        <!-- <top-section>This is the Blog Heading</top-section> -->
         <h1 class="bl-article-title bl-h1">This is the Blog Heading</h1>
         <p class="bl-p">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci veritatis, 
@@ -48,8 +47,8 @@ const FullArticle = {
           similique nihil rerum dolor maiores? Alias perferendis repellendus quisquam dolore illum id 
           necessitatibus eos explicabo, dolores saepe, optio fugiat! Id debitis dicta nesciunt minimal. 
         </p>
+      </article>
     </div>
-    </article>
   `,
 };
 
