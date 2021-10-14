@@ -17,7 +17,7 @@
   align-items: center;
   justify-content: center;
   
-  display: none;
+  display: none; /*! make a decision about what to do with this element */
 }
 
 .se-title {

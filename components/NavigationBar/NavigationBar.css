@@ -3,7 +3,7 @@ a {
 }
 
 .nb-header {
-  background-color: rgb(89, 177, 236);
+  background-color: #033131;
 }
 
 .nb-nav {
@@ -15,22 +15,33 @@ a {
   display: flex;
   list-style: none;
   gap: 5px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.nb-nav__item {}
+.nb-nav__item {
+  min-width: 85px;
+}
 
 .nb-nav__link {
   position: relative;
   display: inline-block;
   padding: 15px;
+  color: #8d9393;
 }
 
-.nb-nav__link.router-link-exact-active::after {
+.nb-nav__link::after {
   content: "";
   position: absolute;
   width: 100%;
   height: 5px;
   left: 0;
   bottom: 0;
-  border-bottom: 3px solid rgb(187, 199, 27);
+  border-bottom: 3px solid #a8b3b3;
+  opacity: 0;
+  transition: opacity 200ms linear;
+}
+
+.nb-nav__link.router-link-exact-active::after {
+  opacity: 1;
 }
