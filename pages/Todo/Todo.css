@@ -22,7 +22,7 @@
   transition: transform 300ms;
 }
 
-.td-h1-wrapper:hover .title {
+.td-h1-title-wrapper:hover .td-h1 {
   transform: translateY(2px) skew(90deg);
 }
 
