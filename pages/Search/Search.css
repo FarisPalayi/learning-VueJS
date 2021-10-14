@@ -1,12 +1,8 @@
-body {
-  margin: 0;
-}
-
-*:focus {
+.se-root *:focus {
   outline: solid cadetblue;
 }
 
-header {
+.se-header {
   text-align: center;
   background-image: linear-gradient(45deg, black, transparent);
   color: white;
@@ -20,21 +16,22 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  
+  display: none;
 }
 
-header > h1 {
+.se-title {
   margin: 0;
 }
 
-.search-container {
-  margin-top: 80px;
+.se-search-container {
   width: 100%;
   height: 75px;
   display: grid;
   place-items: center;
 }
 
-.search-container > input[type="search"] {
+.se-search-input {
   width: 300px;
   height: 35px;
   border-radius: 5px;
@@ -45,11 +42,11 @@ header > h1 {
   border: 2px solid #2f4f4fc2;
 }
 
-::placeholder {
+.se-search-input::placeholder {
   color: rgba(47, 79, 79, 0.685);
 }
 
-.card-container {
+.se-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   grid-auto-rows: 100px;
@@ -57,7 +54,7 @@ header > h1 {
   margin: 10px;
 }
 
-.card-container > * {
+.se-cards > * {
   background-color: darkgray;
   background-image: linear-gradient(-45deg, cadetblue, darkslategray);
   color: #ffffffd1;
@@ -69,21 +66,4 @@ header > h1 {
   font-family: monospace;
   border: none;
   font-size: 0.9rem;
-}
-
-optgroup,
-#list,
-datalist,
-option {
-  background-color: red;
-  background-image: linear-gradient(-45deg, cadetblue, darkslategray);
-  color: yellow;
-}
-
-.hyperlink::after {
-  content: none;
-}
-
-.hyperlink {
-  background-image: linear-gradient(-45deg, cadetblue, darkslategray);
 }
