@@ -1,6 +1,7 @@
 import BlogHeader from "../../components/Blog/BlogHeader/BlogHeader.js";
 import BlogPreview from "../../components/Blog/BlogPreview/BlogPreview.js";
 import FullArticle from "../../components/Blog/FullArticle/FullArticle.js";
+import WriteBlog from "../../components/Blog/WriteBlog/WriteBlog.js";
 
 const Blog = {
   template: `

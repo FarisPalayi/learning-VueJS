@@ -81,3 +81,12 @@
 .bl-article-title {
   text-align: center;
 }
+
+/*! temporary. delete after use */
+.bl-404-container { 
+  display: grid;
+  place-items: center;
+}
+.bl-404-container h1 {
+  margin: 24px 0;
+}
