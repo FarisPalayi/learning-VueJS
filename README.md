@@ -1,5 +1,5 @@
 ### I'm learning VueJS. And as I learn new stuff, I'll add new things to this website🎉
-🔗[Live site link](https://farispalayi.github.io/learning-VueJS/)
+🔗[Live site link](https://learning-vuejs-app.netlify.app/)
 
 ### Component Template/Structure
 
