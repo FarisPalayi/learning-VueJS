@@ -1,5 +1,5 @@
 @import url("../components/NavigationBar/NavigationBar.css");
-@import url("./home/Home.css");
+@import url("./Home/Home.css");
 @import url("./Cards/Cards.css");
 @import url("./Todo/Todo.css");
 @import url("./Likes/Likes.css");
