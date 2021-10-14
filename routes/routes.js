@@ -1,8 +1,8 @@
-import Home from "../pages/Home/Home.js"
-import Cards from "../pages/Cards/Cards.js"
-import Todo from "../pages/Todo/Todo.js";
-import Likes from "../pages/Likes/Likes.js";
-import Blog from "../pages/Blog/Blog.js";
+import Home from "../Pages/Home/Home.js"
+import Cards from "../Pages/Cards/Cards.js"
+import Todo from "../Pages/Todo/Todo.js";
+import Likes from "../Pages/Likes/Likes.js";
+import Blog from "../Pages/Blog/Blog.js";
 import FullArticle from "../components/Blog/FullArticle/FullArticle.js";
 import WriteBlog from "../components/Blog/WriteBlog/WriteBlog.js";
 
