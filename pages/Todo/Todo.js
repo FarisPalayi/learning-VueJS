@@ -13,6 +13,7 @@ const options = {
       tabindex: 0,
     };
   },
+
   methods: {
     addItem() {
       if (this.newTodoText.trim() === "") return;
@@ -66,6 +67,9 @@ const options = {
     addToLocalStorage() {
       localStorage.setItem("todoList", JSON.stringify(this.items));
     },
+    getDataFromLocalStorage() {
+      return localStorage.getItem("todoList");
+    },
     deleteTodo(e) {
       const checkbox = e.target.parentElement.firstElementChild;
       const id = checkbox.getAttribute("id");
@@ -73,29 +77,33 @@ const options = {
       this.addToLocalStorage();
     },
   },
+
   mounted() {
-    const todoListFromLocalStorage = localStorage.getItem("todoList");
-    if (todoListFromLocalStorage) {
+    if (this.getDataFromLocalStorage()) {
       try {
-        const parsedData = JSON.parse(todoListFromLocalStorage);
+        const parsedData = JSON.parse(this.getDataFromLocalStorage());
+
+        if (!Array.isArray(parsedData)) throw new TypeError("invalid type");
+
         this.items = parsedData;
-        if (typeof parsedData !== "object") throw new Error("invalid type");
-        if (parsedData.length < 1) throw new Error("empty");
-        for (i in parsedData) {
-          if (!parsedData[i].hasOwnProperty("id")) throw new Error("not valid");
+
+        if (typeof parsedData !== "object") throw new TypeError("invalid type");
+        if (parsedData.length < 1) throw new Error("data is empty");
+
+        for (const i in parsedData) {
+          if (!parsedData[i].hasOwnProperty("id")) throw new EvalError("not valid");
           if (!parsedData[i].hasOwnProperty("text"))
-            throw new Error("not valid");
+            throw new EvalError("not valid");
           if (!parsedData[i].hasOwnProperty("isChecked"))
-            throw new Error("not valid");
+            throw new EvalError("not valid");
         }
       } catch (error) {
-        console.error("Error parsing localStorage data");
+        console.error("Error parsing localStorage data", error);
         localStorage.clear();
-        console.warn(
+        console.error(
           "%clocalStorage data has been automatically cleared",
           "color: lime; font-weight: bold"
         );
-        console.error(error);
       }
       const ol = this.$refs.ol;
       const li = ol.firstElementChild;
