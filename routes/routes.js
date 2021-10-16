@@ -12,7 +12,7 @@ export default [
   { path: "/cards", component: Cards, name: "Cards" },
   { path: "/todo", component: Todo, name: "Todo" },
   { path: "/blog", component: Blog, name: "Blog" },
-  { path: "/article", component: FullArticle }, // if no name specified, it'll not be included in the navbar links
+  { path: "/article/:id", component: FullArticle }, // if no name specified, it'll not be included in the navbar links
   { path: "/likes", component: Likes, name: "Likes" },
   { path: "/write", component: WriteBlog },
   { path: "/search", component: Search, name: "Words" },
