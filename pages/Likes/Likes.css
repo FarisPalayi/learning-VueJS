@@ -1,7 +1,7 @@
 .lk-root {
   display: grid;
   place-items: center;
-  min-height: calc(100vh - 56px);
+  min-height: calc(100vh - var(--navbar-height));
 }
 
 .lk-like,

@@ -1,7 +1,7 @@
 .hm-home {
   margin: 0;
   padding: 0;
-  height: calc(100vh - 54px); /* subtract the height of the top navbar*/
+  height: calc(100vh - var(--navbar-height));
   display: grid;
   place-content: center;
   background-color: darkcyan;

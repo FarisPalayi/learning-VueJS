@@ -24,7 +24,7 @@ const FullArticle = {
         <h1 class="bl-article-title bl-h1">{{ filteredBlogPost.title }}</h1>
         <p class="bl-p">{{ filteredBlogPost.article }}</p>
       </article>
-      <router-link :to="{name: 'Blog'}">Go back</router-link>
+      <router-link :to="{name: 'Blog'}" class="bl-go-back">Home</router-link>
     </div>
   `,
 };

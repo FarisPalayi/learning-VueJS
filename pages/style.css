@@ -1,3 +1,4 @@
+@import url("./variables.css");
 @import url("../components/NavigationBar/NavigationBar.css");
 @import url("./Home/Home.css");
 @import url("./Cards/Cards.css");

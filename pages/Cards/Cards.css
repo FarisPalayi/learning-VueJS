@@ -13,6 +13,7 @@ body {
   grid-auto-rows: 350px;
   gap: 35px;
   padding: 1em;
+  min-height: calc(100vh - var(--navbar-height));
 }
 
 .cd-card {
