@@ -5,7 +5,7 @@
 
 ```js
 // ComponentName.js
-const { data, methods } = {
+const options = {
   data() {
     return {};
   },
@@ -13,8 +13,7 @@ const { data, methods } = {
 };
 
 const ComponentName = {
-  data,
-  methods,
+  ...options,
   template: `<div>html goes here</div>`,
 };
 

@@ -1,6 +1,6 @@
 import routes from "../../routes/routes.js";
 
-const { data } = {
+const options = {
   data() {
     return {
       navList: routes,
@@ -9,7 +9,7 @@ const { data } = {
 };
 
 const navigationBar = {
-  data,
+  ...options,
   template: `
     <header class="nb-header">
       <nav class="nb-nav">

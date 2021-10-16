@@ -1,4 +1,4 @@
-const { props } = {
+const options = {
   props: {
     card: {
       type: Object,
@@ -7,7 +7,7 @@ const { props } = {
 };
 
 const Card = {
-  props,
+  ...options,
   template: `<div class='cd-card'> {{ card.text }} </div>`,
 };
 

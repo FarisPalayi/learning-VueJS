@@ -1,4 +1,4 @@
-const { data } = {
+const options = {
   data() {
     return {
       likes: 0,
@@ -7,7 +7,7 @@ const { data } = {
 };
 
 const Likes = {
-  data,
+  ...options,
   template: `
     <div class="lk-root">
       <div class="lk-container">

@@ -1,4 +1,4 @@
-const { data, methods, mounted } = {
+const options = {
   data() {
     return {
       placeholder: "Add a todo ⌨",
@@ -11,7 +11,7 @@ const { data, methods, mounted } = {
       newTodoText: "",
       currentFocus: 0,
       tabindex: 0,
-    }
+    };
   },
   methods: {
     addItem() {
@@ -107,9 +107,7 @@ const { data, methods, mounted } = {
 };
 
 const ComponentName = {
-  data,
-  methods,
-  mounted,
+  ...options,
   template: `
     <div class="td-todo-container">
       <div class="td-h1-title-wrapper">

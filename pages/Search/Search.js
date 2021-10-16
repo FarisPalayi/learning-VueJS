@@ -1,6 +1,6 @@
 import { store } from "../../store/Search.js";
 
-const { computed, methods, mounted } = {
+const options = {
   computed: {
     ...Vuex.mapState({
       title: "title",
@@ -23,9 +23,7 @@ const { computed, methods, mounted } = {
 
 const Search = {
   store,
-  methods,
-  computed,
-  mounted,
+  ...options,
   template: `
     <div class="se-root">
       <header class="se-header">

@@ -1,4 +1,4 @@
-const { data, methods } = {
+const options = {
   data() {
     return {
       cardText: [
@@ -16,8 +16,7 @@ const { data, methods } = {
 };
 
 const Card = {
-  data,
-  methods,
+  ...options,
   template: `
     <div class="cd-card-container">
       <card

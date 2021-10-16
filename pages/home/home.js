@@ -1,4 +1,4 @@
-const { data, methods } = {
+const options = {
   data() {
     return {
       header1: "First Vue Page🎉",
@@ -72,8 +72,7 @@ const { data, methods } = {
 };
 
 const home = {
-  data,
-  methods,
+  ...options,
   template: `
     <div class="hm-home">
       <header class="hm-header">

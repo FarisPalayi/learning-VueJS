@@ -1,4 +1,4 @@
-const { data, methods } = {
+const options = {
   data() {
     return {};
   },
@@ -6,8 +6,7 @@ const { data, methods } = {
 };
 
 const FullArticle = {
-  data,
-  methods,
+  ...options,
   template: `
     <div class="bl-article-container">
       <article class="bl-article">
