@@ -2,11 +2,15 @@ const BlogPreview = {
   template: `
     <article class="bl-article-preview">
       <router-link to="./article" class="bl-article-preview__link">
-        <h2 class="bl-article-preview__title">Blog Title</h2>
+        <h2 class="bl-article-preview__title">
+          <slot name="article-title">Blog Title</slot>
+        </h2>
         <p class="bl-article-preview__text">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-          Voluptates nihil dolor dolorum corrupti cupiditate molestias 
-          illo suscipit aliquid nesciunt praesentium?
+          <slot name="article-desc">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+            Voluptates nihil dolor dolorum corrupti cupiditate molestias 
+            illo suscipit aliquid nesciunt praesentium?
+          </slot>
         </p>
       </router-link>
     </article>

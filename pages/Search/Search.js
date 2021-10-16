@@ -2,18 +2,12 @@ import { store } from "../../store/Search.js";
 
 const { computed, methods, mounted } = {
   computed: {
-    title() {
-      return this.$store.state.title;
-    },
-    searchedWordList() {
-      return this.$store.state.searchedWordList;
-    },
-    input() {
-      return this.$store.state.query;
-    },
-    noResult() {
-      return this.$store.state.noResult;
-    },
+    ...Vuex.mapState({
+      title: "title",
+      searchedWordList: "searchedWordList",
+      input: "query",
+      noResult: "noResult",
+    }),
   },
   mounted() {
     this.$store.dispatch("getData"); // to add every word to searchedWordList
