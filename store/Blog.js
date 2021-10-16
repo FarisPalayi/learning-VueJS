@@ -6,17 +6,11 @@ export const store = new Vuex.Store({
   },
 
   mutations: {
-    addBlogPostsToState(state, blogPosts) {
+    setBlogPosts(state, blogPosts) {
       state.blogPosts = blogPosts;
     },
-  },
-
-  actions: {
-    getData(context) {
-      fetch("/pages/Blog/BlogData.json")
-        .then((res) => res.json())
-        .then((data) => context.commit("addBlogPostsToState", data))
-        .catch((err) => console.log(err));
-    },
+    addNewArticle(state, newArticle) {
+      state.blogPosts.push(newArticle);
+    }
   },
 });
