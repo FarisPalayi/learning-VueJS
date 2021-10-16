@@ -1,8 +1,5 @@
 const options = {
   props: ["blogId"],
-  mounted() {
-    console.log(this.blogId);
-  },
 };
 
 const BlogPreview = {

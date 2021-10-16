@@ -8,7 +8,7 @@ export const store = new Vuex.Store({
   mutations: {
     addBlogPostsToState(state, blogPosts) {
       state.blogPosts = blogPosts;
-    }
+    },
   },
 
   actions: {
