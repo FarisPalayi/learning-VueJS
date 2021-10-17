@@ -13,64 +13,34 @@ const options = {
   },
 
   computed: {
-    ...Vuex.mapState({
-      blogPosts: "blogPosts",
-    }),
+    ...Vuex.mapState(["blogPosts"]),
+  },
+
+  watch: {
+    blogPosts() {
+      localStorage.setItem("blogPosts", JSON.stringify(this.blogPosts))
+    }
   },
 
   methods: {
+    ...Vuex.mapMutations(["setBlogPosts", "addNewArticle"]),
     isNewUser() {
-      if (this.getNewUserDataFromLS() == undefined) return true;
+      if (localStorage.getItem("isNewUser") == null) return true;
       return false;
-    },
-
-    addNewArticle(title, desc, article) {
-      const newId = this.getLastArticleId() + 1;
-      const newArticle = {
-        id: newId,
-        title,
-        desc,
-        article,
-      };
-
-      this.$store.commit("addNewArticle", newArticle);
-      this.setBlogPostsDataToLS(this.blogPosts);
-    },
-
-    // utils - kinda
-    getDataFromLocalStorage(name) {
-      const data = localStorage.getItem(name);
-      if (data) return data;
-    },
-
-    // LS means localStorage
-    setBlogPostsDataToLS(data) {
-      localStorage.setItem("blogPosts", JSON.stringify(data));
-    },
-    setNotANewUser() {
-      localStorage.setItem("isNewUser", JSON.stringify("0"));
-    },
-
-    getBlogPostsDataFromLS() {
-      return this.getDataFromLocalStorage("blogPost");
-    },
-    getNewUserDataFromLS() {
-      return this.getDataFromLocalStorage("isNewUser");
-    },
-
-    getLastArticleId() {
-      const lastArticle = this.blogPosts[this.blogPosts.length - 1];
-      return lastArticle.id;
     },
   },
 
   mounted() {
     if (this.isNewUser()) {
-      this.setNotANewUser();
-      this.setBlogPostsDataToLS(this.initialBlogData);
+      localStorage.setItem("isNewUser", "0");
+      localStorage.setItem("blogPosts", JSON.stringify(this.initialBlogData));
     }
 
-    this.$store.commit("setBlogPosts", this.initialBlogData);
+    const blogPostsFromLocalStorage = JSON.parse(
+      localStorage.getItem("blogPosts")
+    );
+
+    if (blogPostsFromLocalStorage) this.setBlogPosts(blogPostsFromLocalStorage);
   },
 };
 
@@ -80,7 +50,7 @@ const Blog = {
   template: `
     <div class="bl-root">
       <div class="bl-container">
-        <blog-header>Recent Articles</blog-header>
+        <blog-header>Articles</blog-header>
 
         <main class="bl-main">
           <blog-preview v-for="(blog, i) in blogPosts" :key="i" :blogId="blog.id">

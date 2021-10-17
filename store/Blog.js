@@ -11,6 +11,9 @@ export const store = new Vuex.Store({
     },
     addNewArticle(state, newArticle) {
       state.blogPosts.push(newArticle);
+    },
+    log() {
+      console.log("hello")
     }
   },
 });

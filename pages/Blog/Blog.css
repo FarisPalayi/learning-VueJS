@@ -91,11 +91,80 @@
   background-color: #136a6a;
 }
 
-/*! temporary. delete after use */
-.bl-404-container { 
+/* write */
+.bl-write-root {
   display: grid;
   place-items: center;
+  min-height: calc(100vh - var(--navbar-height));
 }
-.bl-404-container h1 {
-  margin: 24px 0;
+
+.bl-write {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 650px;
+  padding: 35px;
+  margin: 40px;
+
+  background-color: #1e6060;
+  border-radius: 15px;
+}
+
+.bl-write__title {
+  font-size: larger;
+  text-align: center;
+}
+
+.bl-write__input-container > * {
+  width: 100%;
+}
+
+.bl-write label {
+  font-size: large;
+  color: #e8e8e8;
+}
+
+.bl-write textarea {
+  resize: vertical;
+}
+
+.bl-write textarea,
+input {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #528f8f;
+  border: none;
+  text-indent: 5px;
+  font-size: medium;
+  color: #fff;
+}
+
+.bl-write ::placeholder {
+  color: rgb(206, 206, 206);
+}
+
+.bl-write__submit {
+  border-radius: 5px;
+  padding: 6px 5px;
+  border: none;
+  background-color: #bfac8a;
+  color: #404040;
+  font-size: medium;
+  text-transform: uppercase;
+}
+
+.bl-write__success {
+  position: absolute;
+  left: 10px;
+  top: 60px;
+  margin: 10px;
+  padding: 5px 20px;
+  border-radius: 4px;
+  background-color: #47c547;
+  color: white;
+}
+
+.bl-write__success::after {
+  content: " ✔";
 }
