@@ -1,9 +1,10 @@
+import { store } from "../../store/Blog.js";
+import { initialBlogData } from "./initialBlogData.js";
+
 import BlogHeader from "../../components/Blog/BlogHeader/BlogHeader.js";
 import BlogPreview from "../../components/Blog/BlogPreview/BlogPreview.js";
 import FullArticle from "../../components/Blog/FullArticle/FullArticle.js";
 import WriteBlog from "../../components/Blog/WriteBlog/WriteBlog.js";
-import { store } from "../../store/Blog.js";
-import { initialBlogData } from "./initialBlogData.js";
 
 const options = {
   data() {
@@ -18,8 +19,8 @@ const options = {
 
   watch: {
     blogPosts() {
-      localStorage.setItem("blogPosts", JSON.stringify(this.blogPosts))
-    }
+      localStorage.setItem("blogPosts", JSON.stringify(this.blogPosts));
+    },
   },
 
   methods: {
@@ -49,9 +50,8 @@ const Blog = {
   ...options,
   template: `
     <div class="bl-root">
-      <div class="bl-container">
+      <div class="bl-container" v-if="this.$router.history.current.path === '/blog'">
         <blog-header>Articles</blog-header>
-
         <main class="bl-main">
           <blog-preview v-for="(blog, i) in blogPosts" :key="i" :blogId="blog.id">
             <template #article-title>
@@ -62,7 +62,9 @@ const Blog = {
             </template>
           </blog-preview>
         </main>
+
       </div>
+      <router-view></router-view>
     </div>
   `,
 };

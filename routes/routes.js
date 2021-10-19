@@ -10,8 +10,14 @@ export default [
   { path: "/", component: Home, name: "Home" },
   { path: "/cards", component: Cards, name: "Cards" },
   { path: "/todo", component: Todo, name: "Todo" },
-  { path: "/blog", component: Blog, name: "Blog" },
-  { path: "/article/:id", component: FullArticle }, // if no name specified, it'll not be included in the navbar links
-  { path: "/write", component: WriteBlog },
+  {
+    path: "/blog",
+    component: Blog,
+    name: "Blog",
+    children: [
+      { path: "write", component: WriteBlog },
+      { path: "article/:id", component: FullArticle },
+    ],
+  },
   { path: "/search", component: Search, name: "Words" },
 ];

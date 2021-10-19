@@ -6,7 +6,7 @@ const BlogPreview = {
   ...options,
   template: `
     <article class="bl-article-preview">
-      <router-link :to="\`article/\${blogId}\`" class="bl-article-preview__link">
+      <router-link :to="\`blog/article/\${blogId}\`" class="bl-article-preview__link">
         <h2 class="bl-article-preview__title">
           <slot name="article-title">Blog Title</slot>
         </h2>
