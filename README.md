@@ -7,9 +7,14 @@
 // ComponentName.js
 const options = {
   data() {
-    return {};
+    return {
+      // ...
+    };
   },
-  methods: {},
+  methods: {
+    // ...
+  },
+  // ...
 };
 
 const ComponentName = {
