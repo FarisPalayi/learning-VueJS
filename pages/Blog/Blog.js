@@ -1,5 +1,4 @@
 import { store } from "../../store/Blog.js";
-import { initialBlogData } from "./initialBlogData.js";
 
 import BlogHeader from "../../components/Blog/BlogHeader/BlogHeader.js";
 import BlogPreview from "../../components/Blog/BlogPreview/BlogPreview.js";
@@ -7,12 +6,6 @@ import FullArticle from "../../components/Blog/FullArticle/FullArticle.js";
 import WriteBlog from "../../components/Blog/WriteBlog/WriteBlog.js";
 
 const options = {
-  data() {
-    return {
-      initialBlogData,
-    };
-  },
-
   computed: {
     ...Vuex.mapState(["blogPosts"]),
   },
@@ -32,16 +25,25 @@ const options = {
   },
 
   mounted() {
-    if (this.isNewUser()) {
-      localStorage.setItem("isNewUser", "0");
-      localStorage.setItem("blogPosts", JSON.stringify(this.initialBlogData));
+    const addPredefinedDataToLSForANewUser = async () => {
+      if (this.isNewUser()) {
+        localStorage.setItem("isNewUser", "0");
+        const { initialBlogData } = await import("./initialBlogData.js");
+        localStorage.setItem("blogPosts", JSON.stringify(initialBlogData));
+        return initialBlogData;
+      }
+
+      return Promise.resolve();
     }
 
-    const blogPostsFromLocalStorage = JSON.parse(
-      localStorage.getItem("blogPosts")
-    );
+    addPredefinedDataToLSForANewUser().then(() => {
+      const blogPostsFromLocalStorage = JSON.parse(
+        localStorage.getItem("blogPosts")
+      );
 
-    if (blogPostsFromLocalStorage) this.setBlogPosts(blogPostsFromLocalStorage);
+      if (blogPostsFromLocalStorage)
+        this.setBlogPosts(blogPostsFromLocalStorage);
+    });
   },
 };
 

@@ -1,13 +1,12 @@
-const { createApp, ref } = Vue;
+const { createApp, ref, reactive, toRefs } = Vue;
 
-const obj = {
+createApp({
   setup() {
-    const count = ref(0);
+    const state = reactive({ count: 0 });
+    const input = ref("");
 
-    const increment = () => count.value++;
+    const increment = () => state.count++;
 
-    return { increment, count };
+    return { increment, ...toRefs(state), input };
   },
-};
-
-createApp(obj).mount("#app");
+}).mount("#app");
